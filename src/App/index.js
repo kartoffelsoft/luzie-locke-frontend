@@ -1,9 +1,18 @@
+import { useEffect } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom'
-import { Default, Login } from './pages';
+import { useDispatch } from 'react-redux';
 
+import { Default, Login } from './pages';
+import { ping } from '../store/actions/misc';
 import styles from './index.module.scss';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(ping());
+  }, [dispatch]);
+
   return (
     <div className={styles.container}>
       <HashRouter>

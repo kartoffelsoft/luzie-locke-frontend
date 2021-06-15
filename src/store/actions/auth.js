@@ -3,8 +3,8 @@ import * as api from '../../api/index.js';
 
 export const loginGoogle = (token, history) => async dispatch => {
   try {
-    const res = await api.loginGoogle(token)
-    dispatch({ type: AUTH, data: res.data})
+    const res = await api.loginGoogle(token);
+    dispatch({ type: AUTH, data: res.data});
     history.push('/');
   } catch (error) {
     console.log(error);
