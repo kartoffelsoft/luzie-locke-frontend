@@ -1,0 +1,24 @@
+.menu {
+  display: flex;
+
+  &List {
+    font-size: 2rem;
+    font-weight: 500;
+    list-style: none;
+    margin-top: 3.5rem;
+  }
+  
+  &Item {
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+
+  &Link {
+    color: var(--color-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1rem 3rem;
+    position: relative;
+  }
+}

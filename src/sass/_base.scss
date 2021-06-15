@@ -1,0 +1,44 @@
+:root {
+  --color-primary: #705df1;
+  --color-primary-light-1: #efe3ff;
+  --color-primary-light-2: #af9aff;
+
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+
+  --color-black: #000;
+  --color-white: #fff;
+
+  --bp-medium: 56.25em; // 900/16
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+}
