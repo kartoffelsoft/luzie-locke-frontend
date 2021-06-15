@@ -15,7 +15,6 @@ function Header() {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    console.log("Checking...");
     const access = JSON.parse(localStorage.getItem('accessToken'));
     const refresh  = JSON.parse(localStorage.getItem('refreshToken'));
 

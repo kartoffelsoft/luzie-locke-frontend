@@ -13,12 +13,14 @@ export const loginGoogle = (token, history) => async dispatch => {
 
 export const refreshToken = (token, history) => async dispatch => {
   try {
-    console.log(token);
+    console.log('Refreshing token...');
     const res = await api.refreshToken(token)
     console.log(res.data);
     if (res.data.success) {
+      console.log('Token refreshed');
       dispatch({ type: SET_ACCESS_TOKEN, data: res.data});
     } else {
+      console.log('Token refresh was unsuccessful.');
       dispatch({ type: LOGOUT });
       history.push('/login');
     }

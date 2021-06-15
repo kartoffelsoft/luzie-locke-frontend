@@ -26,7 +26,7 @@ function Login() {
   return (
     <div className={styles.container}>
       <GoogleLogin
-        clientId="589697532425-eq79qfiv9dutg58leviodjquvulusti9.apps.googleusercontent.com"
+        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID} 
         onSuccess={onGoogleSuccess}
         onFailure={onGoogleFailure}
         cookiePolicy={'single_host_origin'}
