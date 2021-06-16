@@ -10,7 +10,6 @@ function Login() {
   const history = useHistory();
 
   const onGoogleSuccess = async (res) => {
-    console.log(res);
     const token = res?.accessToken;
     try {
       dispatch(loginGoogle({ token }, history));

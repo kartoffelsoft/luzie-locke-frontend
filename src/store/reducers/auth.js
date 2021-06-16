@@ -3,7 +3,6 @@ import { AUTH, SET_ACCESS_TOKEN, LOGOUT } from '../actions/types';
 const authReducer = (state = null, action) => {
   switch(action.type) {
     case AUTH:
-      console.log(action?.data);
       localStorage.setItem('profile', JSON.stringify({ ...action?.data?.profile }));
       localStorage.setItem('accessToken', JSON.stringify(action?.data?.accessToken));
       localStorage.setItem('refreshToken', JSON.stringify(action?.data?.refreshToken));
