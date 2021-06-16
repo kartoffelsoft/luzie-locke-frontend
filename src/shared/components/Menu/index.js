@@ -7,7 +7,7 @@ import MenuButton from './MenuButton';
 import MenuList from './MenuList';
 import SideDrawer from './SideDrawer';
 import styles from './index.module.scss';
-import locationIcon from '../../../assets/images/sprite.svg';
+import icons from '../../../assets/images/sprite.svg';
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -18,6 +18,11 @@ const Menu = () => {
 
   const onDrawerClick = () => {
     setDrawerIsOpen(!drawerIsOpen);
+  }
+
+  const onUserClick = () => {
+    setDrawerIsOpen(false);
+    history.push('/location');
   }
 
   const onLogoutHandler = () => {
@@ -33,16 +38,19 @@ const Menu = () => {
       
       default:
         return <>
-          <div className={styles.userLocation}>
+          <div className={styles.user} onClick={onUserClick}>
+            <img src={user.pictureURI} alt="" className={styles.userPhoto} />
+            <div className={styles.userName}>
+              Hi, {user.name} !
+            </div>
             <svg className={styles.userLocationIcon}>
-              <use href={locationIcon + "#icon-location-pin"}></use>
+              <use href={icons + "#icon-location-pin"}></use>
             </svg>
             <div className={styles.userLocationText}>
               Frankfurt
             </div>
           </div>
 
-          <img src={user.pictureURI} alt="" className={styles.userPhoto} />
           <MenuList onLogoutHandler={onLogoutHandler} />
         </>;
     }

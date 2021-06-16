@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
-import { Default, Login } from './pages';
+import { Default, Login, Location } from './pages';
 import { ping } from '../store/actions/misc';
 import styles from './index.module.scss';
 
@@ -19,6 +19,7 @@ function App() {
         <Switch>
           <Route path='/' exact component={Default} />
           <Route path='/login' component={Login} />
+          <Route path='/location' component={Location} />
         </Switch>      
       </HashRouter>
     </div>
