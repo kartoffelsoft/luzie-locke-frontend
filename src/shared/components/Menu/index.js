@@ -41,7 +41,7 @@ const Menu = () => {
           <div className={styles.user} onClick={onUserClick}>
             <img src={user.pictureURI} alt="" className={styles.userPhoto} />
             <div className={styles.userName}>
-              Hi, {user.name} !
+              Hello, {user.name}!
             </div>
             <svg className={styles.userLocationIcon}>
               <use href={icons + "#icon-location-pin"}></use>

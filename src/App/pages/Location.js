@@ -1,14 +1,20 @@
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
 import Header from '../../shared/components/Header';
+import Button from '../../shared/components/Button';
 import Map from '../../shared/components/Map';
+import { updateLocation } from '../../store/actions/auth';
 
 import styles from './Location.module.scss';
 
 function Location() {
+  const user = JSON.parse(localStorage.getItem('profile'));
+
+  const dispatch = useDispatch();
   const [ coordinates, setCoordinates ] = useState(null);
-  const [ location, setLocation ] = useState('Frankfurt');
+  const [ location, setLocation ] = useState('');
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -27,6 +33,11 @@ function Location() {
     setLocation(res.data.results[0].address_components[0].long_name);
   }
 
+  const applyButtonClickHandler = () => {
+    console.log('>> ' + user._id + ' ' + location + ' ' + coordinates.lat + ' ' + coordinates.lng);
+    dispatch(updateLocation(user._id, location, coordinates.lat, coordinates.lng));
+  }
+
   return (
     <>
       <Header />
@@ -38,6 +49,13 @@ function Location() {
           <div className={styles.location}>
             <div className={styles.locationName}>
               {location}
+            </div>
+            <div className={styles.locationDescription}>
+              <p>Would you like to set <b>{location}</b> as your location?</p>
+              <p>You may move a cursor on the map to change your location.</p>
+            </div>
+            <div className={styles.locationApply}>
+              <Button className={styles.locationApplyButton} onClick={applyButtonClickHandler}>APPLY</Button>
             </div>
           </div>
         </div>

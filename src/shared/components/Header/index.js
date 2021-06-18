@@ -27,7 +27,7 @@ function Header() {
           history.push('/login');
         } else {
           try {
-            dispatch(refreshToken({ token: refresh }, history));
+            dispatch(refreshToken(refresh, history));
           } catch (error) {
             console.log(error);
           }

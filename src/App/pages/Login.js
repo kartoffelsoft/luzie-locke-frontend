@@ -12,7 +12,7 @@ function Login() {
   const onGoogleSuccess = async (res) => {
     const token = res?.accessToken;
     try {
-      dispatch(loginGoogle({ token }, history));
+      dispatch(loginGoogle( token, history));
     } catch (error) {
       console.log(error);
     }
