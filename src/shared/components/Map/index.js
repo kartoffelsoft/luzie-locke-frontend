@@ -1,31 +1,48 @@
-import React, { useRef, useEffect } from 'react';
+import React, { Component, createRef } from 'react';
 
 import styles from './index.module.scss';
 
-const Map = props => {
-  const mapRef = useRef();
+class Map extends Component {
+  constructor(props) {
+    super(props);
 
-  const { center, zoom, onMarkerChange } = props;
+    this.map = null;
+    this.mapRef = createRef();
+    this.buffer = document.createElement('canvas');
 
-  useEffect(() => {
-    console.log("Calling google map");
-    const map = new window.google.maps.Map(mapRef.current, {
-      center: center,
-      zoom: zoom,
+    this.canvasContext = null;
+    this.bufferContext = null;
+  }
+
+  componentDidMount() {
+    this.map = new window.google.maps.Map(this.mapRef.current, {
+      center: this.props.center,
+      zoom: this.props.zoom,
       streetViewControl: false,
       fullscreenControl: false,
       mapTypeControl: false,
     });
 
-    const marker = new window.google.maps.Marker({ position: center, map: map, draggable: true });
+    const marker = new window.google.maps.Marker({ 
+      position: this.props.center, 
+      map: this.map, 
+      draggable: true });
 
-    new window.google.maps.event.addListener(marker, 'dragend', function (evt) {
-      onMarkerChange({ lat: evt.latLng.lat(), lng: evt.latLng.lng() });
+    new window.google.maps.event.addListener(marker, 'dragend', (evt) => {
+      console.log(this.props);
+      this.props.onMarkerChange({ lat: evt.latLng.lat(), lng: evt.latLng.lng() });
     });
+  }
 
-  }, [center, zoom, onMarkerChange])
+  shouldComponentUpdate(nextProps, nextState){
+    return this.props === null; 
+  }
 
-  return <div ref={mapRef} className={styles.map}></div>
+  render() {
+    return (
+      <div ref={this.mapRef} className={styles.map}></div>
+    )
+  }
 }
 
 export default Map;
