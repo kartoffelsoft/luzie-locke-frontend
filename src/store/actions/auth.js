@@ -30,9 +30,9 @@ export const refreshToken = (token, history) => async dispatch => {
   }
 }
 
-export const updateLocation = (uid, name, lat, lng) => async dispatch => {
+export const updateLocation = (name, lat, lng) => async dispatch => {
   try {
-    const res = await api.updateLocation(uid, { name, lat, lng });
+    const res = await api.updateLocation({ name, lat, lng });
     console.log(res);
     dispatch({ type: SET_PROFILE, data: res.data });
   } catch (error) {

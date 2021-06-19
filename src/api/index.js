@@ -14,8 +14,8 @@ export const loginGoogle = (data) => API.post('/api/users/login/google', data);
 
 export const refreshToken = (data) => API.post('/api/users/login/refresh', data);
 
-export const updateLocation = (uid, data) => {
-  return API.patch(`/api/users/${uid}/location`, data);
+export const updateLocation = (data) => {
+  return API.patch(`/api/users/location`, data);
 }
 
 export const ping = () => API.get('/ping');

@@ -17,6 +17,10 @@ const Menu = () => {
   const [ drawerIsOpen, setDrawerIsOpen ] = useState(false);
 
   const onDrawerClick = () => {
+    if(!drawerIsOpen) {
+      setUser(JSON.parse(localStorage.getItem('profile')));
+    }
+
     setDrawerIsOpen(!drawerIsOpen);
   }
 
@@ -47,7 +51,7 @@ const Menu = () => {
               <use href={icons + "#icon-location-pin"}></use>
             </svg>
             <div className={styles.userLocationText}>
-              Frankfurt
+              {user.location.name}
             </div>
           </div>
 

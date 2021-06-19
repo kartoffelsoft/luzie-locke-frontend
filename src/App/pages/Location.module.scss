@@ -18,7 +18,6 @@
   &Name {
     padding: 1rem;
     width: 100%;
-    height: 10rem;
     text-align: center;
     font-size: 3rem;
     font-weight: 600;
@@ -26,9 +25,7 @@
   }
 
   &Description {
-    padding: 2rem;
     width: 100%;
-    height: 10rem;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 400;
@@ -36,6 +33,7 @@
   }
 
   &Apply {
+    padding: 2rem;
     text-align: center;
   }
 
