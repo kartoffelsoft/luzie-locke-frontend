@@ -17,8 +17,8 @@ function App() {
     <div className={styles.container}>
       <BrowserRouter>
         <Switch>
-           <Route path='/' component={Main} />
            <Route path='/login' component={Login} />
+           <Route path='/' component={Main} />
         </Switch>      
       </BrowserRouter>
     </div>

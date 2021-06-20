@@ -8,7 +8,7 @@
   margin: 1.5rem;
   display: grid;
   width: 80%;
-  grid-template-columns: 6rem 0.5rem 2rem auto;
+  grid-template-columns: 6rem auto;
   grid-template-rows: 3.5rem 2.5rem;
   align-items: center;
 
@@ -24,7 +24,7 @@
   }
 
   &Name {
-    grid-column: 2 / span 3;
+    grid-column: 2 / span 1;
     grid-row: 1 / span 1;
     margin-left: 0.5rem;
     font-size: 150%;
@@ -32,26 +32,35 @@
     color: var(--color-primary);
   }
 
-  &LocationIcon {
-    grid-column: 3 / span 1;
+  &Location {
+    grid-column: 2 / span 1;
     grid-row: 2 / span 1;
-    height: 2rem;
-    width: 2rem;
-    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    fill: var(--color-primary);
+
+    display: flex;
+    align-items: center;
+
+    &Icon {
+      height: 2rem;
+      width: 2rem;
+      background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      fill: var(--color-primary);
+    }
+
+    &Text {
+      font-size: 150%;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--color-primary);
+    }
   }
-  
-  &LocationText {
-    grid-column: 4 / span 1;
+
+  &SetLocation {
+    display: flex;
+    grid-column: 2 / span 1;
     grid-row: 2 / span 1;
-    margin-left: 0.5rem;
-    font-size: 150%;
-    font-weight: 500;
-    line-height: 1;
-    color: var(--color-primary);
   }
 }
 

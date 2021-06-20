@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
 import { LOGOUT } from '../../../store/actions/types';
+import Button from '../Button';
 import MenuButton from './MenuButton';
 import MenuList from './MenuList';
 import SideDrawer from './SideDrawer';
@@ -47,12 +48,23 @@ const Menu = () => {
             <div className={styles.userName}>
               Hello, {user.name}!
             </div>
-            <svg className={styles.userLocationIcon}>
-              <use href={icons + "#icon-location-pin"}></use>
-            </svg>
-            <div className={styles.userLocationText}>
-              {user.location.name}
-            </div>
+            {
+              user.location.name === '' && 
+              <div className={styles.userLocation}>
+                <svg className={styles.userLocationIcon}>
+                  <use href={icons + "#icon-location-pin"}></use>
+                </svg>
+                <div className={styles.userLocationText}>
+                  {user.location.name}
+                </div>
+              </div>
+            }
+            {
+              user.location.name !== '' && 
+              <div className={styles.userSetLocation}>
+                <Button>Set Location</Button>
+              </div>
+            }
           </div>
 
           <MenuList onLogoutHandler={onLogoutHandler} />
