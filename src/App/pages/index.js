@@ -1,9 +1,11 @@
-import Default from './Default';
+import Main from './Main';
+import Home from './Home';
 import Login from './Login';
 import Location from './Location';
 
 export {
-  Default,
+  Main,
+  Home,
   Login,
   Location
 }

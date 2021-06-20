@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-import Header from '../../shared/components/Header';
 import Button from '../../shared/components/Button';
 import Map from '../../shared/components/Map';
 import { updateLocation } from '../../store/actions/auth';
@@ -25,7 +24,7 @@ function Location() {
       console.log("Geolocation is not supported by your browser.");
 
       const user = JSON.parse(localStorage.getItem('profile'));
-      
+
       if(user?.location?.name) {
         setCoordinates({ lat: user.location.geoJSON.coordinates[0], lng: user.location.geoJSON.coordinates[1] });
       } else {
@@ -78,7 +77,6 @@ function Location() {
 
   return (
     <>
-      <Header />
       <main>
         { coordinates && renderLocation() }
       </main>

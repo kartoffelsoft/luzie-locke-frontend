@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
-import { Default, Login, Location } from './pages';
+import { Main, Login } from './pages';
 import { ping } from '../store/actions/misc';
 import styles from './index.module.scss';
 
@@ -15,13 +15,12 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
-          <Route path='/' exact component={Default} />
-          <Route path='/login' component={Login} />
-          <Route path='/location' component={Location} />
+           <Route path='/' component={Main} />
+           <Route path='/login' component={Login} />
         </Switch>      
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }

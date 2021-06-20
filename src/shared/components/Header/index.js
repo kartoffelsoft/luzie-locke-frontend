@@ -38,7 +38,7 @@ function Header() {
 
   return (
     <>
-      <header className={styles.header}>
+      <div className={styles.container}>
         <div className={styles.logo}>
           <a href="/"><div className={styles.logoImage} /></a>
           <div className={styles.logoText}>
@@ -49,7 +49,7 @@ function Header() {
         <div className={styles.nav}>
           <Menu />
         </div>
-      </header>
+      </div>
     </>
   );
 }
