@@ -49,7 +49,7 @@ const Menu = () => {
               Hello, {user.name}!
             </div>
             {
-              user.location.name === '' && 
+              user.location.name !== '' && 
               <div className={styles.userLocation}>
                 <svg className={styles.userLocationIcon}>
                   <use href={icons + "#icon-location-pin"}></use>
@@ -60,7 +60,7 @@ const Menu = () => {
               </div>
             }
             {
-              user.location.name !== '' && 
+              user.location.name === '' && 
               <div className={styles.userSetLocation}>
                 <Button>Set Location</Button>
               </div>

@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import Button from '../../shared/components/Button';
+import Spinner from '../../shared/components/Spinner';
 import Map from '../../shared/components/Map';
 import { updateLocation } from '../../store/actions/auth';
 
@@ -40,7 +41,8 @@ function Location() {
   }, [coordinates]);
 
   const queryLocationName = async (coords) => {
-    const res = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${coords.lat},${coords.lng}&result_type=locality&key=${process.env.REACT_APP_GOOGLE_API_KEY}`);
+    const res = await axios.get(
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${coords.lat},${coords.lng}&result_type=locality&key=${process.env.REACT_APP_GOOGLE_API_KEY}&language=en`);
     setLocationName(res.data.results[0].address_components[0].long_name);
   } 
 
@@ -53,9 +55,8 @@ function Location() {
   }
   
   const renderLocation = () => {
-    console.log(coordinates);
     return <>
-      <div className={styles.container}>
+      <div className={styles.grid}>
         <div className={styles.map}>
           <Map center={coordinates} zoom={14} onMarkerChange={markerChangeHandler} />
         </div>
@@ -75,11 +76,19 @@ function Location() {
     </>;
   }
 
+  if(coordinates === null) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.spinner}>
+          <Spinner />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
-      <main>
-        { coordinates && renderLocation() }
-      </main>
+      { renderLocation() }
     </>
   );
 }
