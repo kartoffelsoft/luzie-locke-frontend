@@ -53,9 +53,17 @@ function Location() {
   const applyButtonClickHandler = () => {
     dispatch(updateLocation(locationName, coordinates.lat, coordinates.lng, history));
   }
-  
-  const renderLocation = () => {
-    return <>
+
+  if(coordinates === null) {
+    return (
+      <div className={styles.container}>
+        <Spinner />
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.container}>
       <div className={styles.grid}>
         <div className={styles.map}>
           <Map center={coordinates} zoom={14} onMarkerChange={markerChangeHandler} />
@@ -73,23 +81,7 @@ function Location() {
           </div>
         </div>
       </div>
-    </>;
-  }
-
-  if(coordinates === null) {
-    return (
-      <div className={styles.container}>
-        <div className={styles.spinner}>
-          <Spinner />
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <>
-      { renderLocation() }
-    </>
+    </div>
   );
 }
 

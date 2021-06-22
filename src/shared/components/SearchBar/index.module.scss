@@ -9,33 +9,26 @@
   &Input {
     font-family: inherit;
     font-size: inherit;
-    background-color: var(--color-grey-light-3);
-    border: none;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-primary-light-2);
     padding: .7rem 2rem;
     border-radius: 100px;
-    width: 75%;
-    transition: all .2s;
+    width: 90%;
     margin-right: -3.25rem;
 
     &:focus {
       outline: none;
-      width: 80%;
-      background-color: var(--color-grey-light-3);
     }
 
     &::-webkit-input-placeholder {
       font-weight: 100;
-      color: var(--color-grey-light-3);
+      background-color: var(--color-white);
     }
-  }
-
-  &Input:focus + &Button {
-    background-color: var(--color-primary-light-3);
   }
   
   &Button {
     border: none;
-    background-color: var(--color-grey-light-3);
+    background-color: var(--color-white);
 
     &:focus {
       outline: none;  
@@ -49,6 +42,6 @@
   &Icon {
     height: 2rem;
     width: 2rem;
-    fill: var(--color-grey-dark-3);
+    fill: var(--color-primary-light-2);
   }
 }
