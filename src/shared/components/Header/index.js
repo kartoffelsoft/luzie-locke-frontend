@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
@@ -9,6 +9,7 @@ import Menu from '../Menu';
 import styles from './index.module.scss';
 
 function Header() {
+  const [ title, setTitle ] = useState('Garage Sale');
   const user = JSON.parse(localStorage.getItem('profile'));
   const location = useLocation();
   const history = useHistory();
@@ -34,7 +35,32 @@ function Header() {
         }
       };
     }
-  }, [location, dispatch, history, user]);
+  }, [ location, dispatch, history, user ]);
+
+  useEffect(() => {
+    console.log("@@" + location.pathname);
+    switch(location.pathname) { 
+      case '/local':
+        setTitle('My Local');
+        break;
+
+      case '/garage':
+        setTitle('My Garage');
+        break;
+      
+      case '/chats':
+        setTitle('Chats');
+        break;
+
+      case '/settings':
+        setTitle('Settings');
+        break;
+
+      default:
+        setTitle('Garage Sale');
+        break;
+    }
+  }, [ location ]);
 
   return (
     <>
@@ -48,7 +74,7 @@ function Header() {
         <div className={styles.logo}>
           <a href="/"><div className={styles.logoImage} /></a>
           <div className={styles.logoText}>
-            Garage Sales
+            {title}
           </div>
         </div>
       </div>

@@ -1,0 +1,27 @@
+.add {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 120rem;
+  height: 7rem;
+  z-index: 10;
+  background-color: transparent;
+
+  &Button {
+    position: absolute;
+    right: 1rem;
+  }
+
+  &Icon {
+    position: relative;
+    font-size: 3.2rem;
+    color: var(--color-primary);
+
+    &::before {
+      display: block;
+      content: '+';
+    }
+  }
+}
+
+

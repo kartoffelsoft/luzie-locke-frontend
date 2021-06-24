@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom'
 
 import Header from '../../shared/components/Header';
-import { Home, Location } from '.';
+import { Home, Location, Garage } from '.';
 
 function Main() {
   return (
@@ -12,7 +12,8 @@ function Main() {
       <main>
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/location' component={Location} />
+          <Route path='/settings' component={Location} />
+          <Route path='/garage' component={Garage} />
         </Switch>      
       </main>
     </>

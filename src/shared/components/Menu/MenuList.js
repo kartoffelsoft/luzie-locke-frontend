@@ -15,7 +15,7 @@ const MenuList = (props) => {
             <a className={styles.menuLink} href="/garage">My Garage</a>
           </li>
           <li className={styles.menuItem}>
-            <a className={styles.menuLink} href="/location">Settings</a>
+            <a className={styles.menuLink} href="/settings">Settings</a>
           </li>
           <li className={styles.menuItem} onClick={props.onLogoutHandler}>
             <a className={styles.menuLink} href="/">Logout</a>
