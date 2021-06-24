@@ -38,16 +38,18 @@ function Header() {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.placeHolder}></div>
+      <div className={styles.menu}>
+        <div className={styles.menuButton}>
+          <Menu />
+        </div>
+      </div>
+      <div className={styles.header}>
         <div className={styles.logo}>
           <a href="/"><div className={styles.logoImage} /></a>
           <div className={styles.logoText}>
             Garage Sales
           </div>
-        </div>
-
-        <div className={styles.nav}>
-          <Menu />
         </div>
       </div>
     </>

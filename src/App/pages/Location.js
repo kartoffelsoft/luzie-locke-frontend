@@ -6,6 +6,7 @@ import axios from 'axios';
 import Button from '../../shared/components/Button';
 import Spinner from '../../shared/components/Spinner';
 import Map from '../../shared/components/Map';
+import ErrorModal from '../../shared/components/ErrorModal';
 import { updateLocation } from '../../store/actions/auth';
 
 import styles from './Location.module.scss';
@@ -63,25 +64,28 @@ function Location() {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.grid}>
-        <div className={styles.map}>
-          <Map center={coordinates} zoom={14} onMarkerChange={markerChangeHandler} />
-        </div>
-        <div className={styles.location}>
-          <div className={styles.locationName}>
-            {locationName}
+    <>
+      <ErrorModal />
+      <div className={styles.container}>
+        <div className={styles.grid}>
+          <div className={styles.map}>
+            <Map center={coordinates} zoom={14} onMarkerChange={markerChangeHandler} />
           </div>
-          <div className={styles.locationDescription}>
-            <p>Would you like to set <b>{locationName}</b> as your location?</p>
-            <p>You may move a cursor on the map to change your location.</p>
-          </div>
-          <div className={styles.locationApply}>
-            <Button className={styles.locationApplyButton} onClick={applyButtonClickHandler}>APPLY</Button>
+          <div className={styles.location}>
+            <div className={styles.locationName}>
+              {locationName}
+            </div>
+            <div className={styles.locationDescription}>
+              <p>Would you like to set <b>{locationName}</b> as your location?</p>
+              <p>You may move a cursor on the map to change your location.</p>
+            </div>
+            <div className={styles.locationApply}>
+              <Button className={styles.locationApplyButton} onClick={applyButtonClickHandler}>APPLY</Button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
