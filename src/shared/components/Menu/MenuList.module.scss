@@ -2,15 +2,27 @@
   display: flex;
 
   &List {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 500;
     list-style: none;
     margin-top: 3.5rem;
   }
   
   &Item {
+    display: flex;
     position: relative;
+    align-items: center;
     margin-bottom: 0.5rem;
+
+    &Icon {
+      height: 2rem;
+      width: 2rem;
+      background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      fill: var(--color-primary);
+    }
   }
 
   &Link {
@@ -18,7 +30,7 @@
     text-decoration: none;
     text-transform: uppercase;
     display: block;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
     position: relative;
   }
 }
