@@ -2,13 +2,14 @@
   display: flex;
 
   &List {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 500;
     list-style: none;
     margin-top: 3.5rem;
   }
   
   &Item {
+    padding: 0rem 2rem;
     display: flex;
     position: relative;
     align-items: center;

@@ -1,0 +1,42 @@
+.new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form {
+  padding: 2rem;
+  width: 100%;
+  max-width: 70rem;
+
+  &Group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  
+  &Input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    padding: 1.5rem 2rem;
+    border: none;
+    border-radius: 2px;
+    background-color: rgba(var(--color-white), .5);
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(var(--color-black), .1);
+      border-bottom: 3px solid var(--color-primary-light-2);
+    }
+
+    &::-webkit-input-placeholder {
+      color: var(--color-grey-dark-2);
+    }
+  }
+
+  &__label {
+
+  }
+}

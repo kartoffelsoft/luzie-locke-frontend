@@ -1,11 +1,15 @@
-import styles from './Garage.module.scss';
+import { useHistory } from 'react-router-dom'
 import CircleButton from '../../shared/components/CircleButton';
 
-const addButtonClickHandler = () => {
-  console.log("Add button pressed");
-};
+import styles from './Garage.module.scss';
 
 function Garage() {
+  const history = useHistory();
+
+  const addButtonClickHandler = () => {
+    history.push('/garage/new');
+  };
+  
   return (
     <>
       <div className={styles.add}>

@@ -38,13 +38,13 @@ function Header() {
   }, [ location, dispatch, history, user ]);
 
   useEffect(() => {
-    console.log("@@" + location.pathname);
     switch(location.pathname) { 
       case '/local':
         setTitle('My Local');
         break;
 
       case '/garage':
+      case '/garage/new':
         setTitle('My Garage');
         break;
       

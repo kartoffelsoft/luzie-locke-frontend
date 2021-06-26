@@ -1,14 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 
 import Button from '../../shared/components/Button';
 import Spinner from '../../shared/components/Spinner';
 import Map from '../../shared/components/Map';
-import ErrorModal from '../../shared/components/ErrorModal';
-import { updateLocation } from '../../store/actions/auth';
 
+import { useHttpClient } from '../../shared/hooks/http-hook';
+import { updateLocation } from '../../store/actions/auth';
 import styles from './Location.module.scss';
 
 function Location() {
@@ -16,6 +15,7 @@ function Location() {
   const history = useHistory();
   const [ coordinates, setCoordinates ] = useState(null);
   const [ locationName, setLocationName ] = useState('');
+  const { sendRequest } = useHttpClient();
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -35,21 +35,26 @@ function Location() {
     }
   }, []);
   
+  const queryLocationName = useCallback(async (coords) => {
+    try {
+      const res = await sendRequest(
+        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${coords.lat},${coords.lng}&result_type=locality&key=${process.env.REACT_APP_GOOGLE_API_KEY}&language=en`
+      );
+      setLocationName(res.results[0].address_components[0].long_name);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [ sendRequest ]);
+
   useEffect(() => {
     if(coordinates !== null) {
       queryLocationName(coordinates);
     }
-  }, [coordinates]);
-
-  const queryLocationName = async (coords) => {
-    const res = await axios.get(
-      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${coords.lat},${coords.lng}&result_type=locality&key=${process.env.REACT_APP_GOOGLE_API_KEY}&language=en`);
-    setLocationName(res.data.results[0].address_components[0].long_name);
-  } 
+  }, [ coordinates, queryLocationName ]);
 
   const markerChangeHandler = useCallback(coords => {
     queryLocationName(coords);
-  }, []);
+  }, [ queryLocationName ]);
 
   const applyButtonClickHandler = () => {
     dispatch(updateLocation(locationName, coordinates.lat, coordinates.lng, history));
@@ -65,7 +70,6 @@ function Location() {
 
   return (
     <>
-      <ErrorModal />
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.map}>
