@@ -4,7 +4,7 @@ import * as api from '../../api/index.js';
 export const getMyItems = () => async dispatch => {
   try {
     const { data } = await api.getMyItems();
-    dispatch({ type: SET_MY_ITEMS, data: data.items });
+    dispatch({ type: SET_MY_ITEMS, data: data });
   } catch (error) {
     console.log(error);
   }

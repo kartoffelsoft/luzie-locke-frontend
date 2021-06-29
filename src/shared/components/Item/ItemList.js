@@ -3,7 +3,7 @@ import Item from './Item';
 import styles from './ItemList.module.scss';
 
 const ItemList = props => {
-  if(props.items.length === 0) {
+  if (props.items.length === 0) {
     return (
       <div className='place-list center'>
         {/* <Card>
