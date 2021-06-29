@@ -1,11 +1,22 @@
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
+
+import { ItemList } from '../../shared/components/Item';
 import CircleButton from '../../shared/components/CircleButton';
+import { getMyItems } from '../../store/actions/item';
 
 import styles from './Garage.module.scss';
 
 function Garage() {
+  const myItems = useSelector(state => state.item.myItems);
   const history = useHistory();
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getMyItems());
+  }, [ dispatch ]);
+  
   const addButtonClickHandler = () => {
     history.push('/garage/new');
   };
@@ -19,7 +30,10 @@ function Garage() {
           </CircleButton>
         </div>
       </div>
-      Garage
+
+      <div className={styles.garage}>
+        <ItemList items={myItems} />
+      </div>
     </>
   );
 }

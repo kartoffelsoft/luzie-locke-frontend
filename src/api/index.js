@@ -10,6 +10,10 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
+export const getMyItems = () => API.get('/api/items/my/');
+
+export const createItem = (data) => API.post('/api/items/', data);
+
 export const loginGoogle = (data) => API.post('/api/users/login/google', data);
 
 export const refreshToken = (data) => API.post('/api/users/login/refresh', data);

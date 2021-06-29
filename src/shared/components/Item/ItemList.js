@@ -3,7 +3,7 @@ import Item from './Item';
 import styles from './ItemList.module.scss';
 
 const ItemList = props => {
-  if(props.items.length === 0 ) {
+  if(props.items.length === 0) {
     return (
       <div className='place-list center'>
         {/* <Card>
@@ -20,12 +20,12 @@ const ItemList = props => {
         props.items.map(
           item => 
             <Item 
-              key={item.id} 
-              id={item.id} 
+              key={item._id} 
+              id={item._id} 
               price={item.price}
-              image={item.image} 
+              image={'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'} 
               title={item.title} 
-              location={item.location} 
+              location={'Eschborn'} 
               description={item.description} />
         )
       }
