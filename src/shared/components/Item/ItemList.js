@@ -25,7 +25,7 @@ const ItemList = props => {
               price={item.price}
               image={'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'} 
               title={item.title} 
-              location={'Eschborn'} 
+              location={item.owner.location.name} 
               description={item.description} />
         )
       }

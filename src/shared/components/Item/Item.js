@@ -14,6 +14,7 @@ const Item = props => {
           {props.location}
         </h4>
         <div className={styles.itemBuyPrice}>
+          <div className={styles.unit}>€</div>
           {props.price}
         </div>
       </div>
