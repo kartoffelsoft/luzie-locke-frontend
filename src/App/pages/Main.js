@@ -1,5 +1,5 @@
-import { Route, Switch } from 'react-router-dom'
-
+import { Route, Switch } from 'react-router-dom';
+import PrivateRoute from '../../helpers/PrivateRoute';
 import Header from '../../components/Header';
 import { Home, Location, Garage, New } from '.';
 
@@ -11,10 +11,10 @@ function Main() {
       </header>
       <main>
         <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/settings' component={Location} />
-          <Route path='/garage' exact component={Garage} />
-          <Route path='/garage/new' exact component={New} />
+          <PrivateRoute path='/settings' component={Location} />
+          <PrivateRoute path='/garage/new' locationRequired component={New} />
+          <PrivateRoute path='/garage' locationRequired component={Garage} />
+          <Route path='/' component={Home} />
         </Switch>      
       </main>
     </>

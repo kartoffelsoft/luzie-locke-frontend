@@ -6,7 +6,7 @@ export const loginGoogle = (token, history) => async dispatch => {
     const res = await api.loginGoogle({ token });
     console.log(res);
     dispatch({ type: AUTH, data: res.data});
-    history.push('/');
+    history.push('/garage');
   } catch (error) {
     console.log(error);
   }
