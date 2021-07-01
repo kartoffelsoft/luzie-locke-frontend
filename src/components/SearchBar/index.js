@@ -1,6 +1,6 @@
 import React from 'react';
 
-import icons from '../../../assets/images/sprite.svg';
+import icons from '../../assets/images/sprite.svg';
 import styles from './index.module.scss';
 
 const SearchBar = props => {

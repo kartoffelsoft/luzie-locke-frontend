@@ -1,6 +1,6 @@
 import Item from './Item';
 
-import defaultImage from '../../../assets/images/box.svg';
+import defaultImage from '../../assets/images/box.svg';
 import styles from './ItemList.module.scss';
 
 const ItemList = props => {

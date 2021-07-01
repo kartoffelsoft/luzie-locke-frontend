@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 
-import { ItemList } from '../../shared/components/Item';
-import CircleButton from '../../shared/components/CircleButton';
+import { ItemList } from '../../components/Item';
+import CircleButton from '../../components/CircleButton';
 import { getMyItems } from '../../store/actions/item';
 
 import styles from './Garage.module.scss';

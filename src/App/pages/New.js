@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
-import Button from '../../shared/components/Button';
+import Button from '../../components/Button';
 import { createItem } from '../../store/actions/item';
 
 import styles from './New.module.scss';

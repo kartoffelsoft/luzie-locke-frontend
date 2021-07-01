@@ -1,4 +1,4 @@
-import icons from '../../../assets/images/sprite.svg';
+import icons from '../../assets/images/sprite.svg';
 import styles from './MenuList.module.scss';
 
 const MenuList = (props) => {

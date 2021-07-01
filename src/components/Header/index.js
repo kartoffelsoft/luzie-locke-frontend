@@ -3,8 +3,8 @@ import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
-import { LOGOUT } from '../../../store/actions/types';
-import { refreshToken } from '../../../store/actions/auth';
+import { LOGOUT } from '../../store/actions/types';
+import { refreshToken } from '../../store/actions/auth';
 import Menu from '../Menu';
 import styles from './index.module.scss';
 

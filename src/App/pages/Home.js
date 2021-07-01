@@ -1,5 +1,5 @@
 import ItemBoard from '../../items/pages/ItemBoard';
-import SearchBar from '../../shared/components/SearchBar';
+import SearchBar from '../../components/SearchBar';
 
 function Home() {
   return (

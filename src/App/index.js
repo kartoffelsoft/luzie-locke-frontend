@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
-import ScrollToTop from '../shared/components/ScrollToTop';
+import ScrollToTop from '../components/ScrollToTop';
 import { Main, Login } from './pages';
 import { ping } from '../store/actions/misc';
 import styles from './index.module.scss';

@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom'
 
-import Header from '../../shared/components/Header';
+import Header from '../../components/Header';
 import { Home, Location, Garage, New } from '.';
 
 function Main() {

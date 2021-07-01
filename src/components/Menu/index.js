@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
-import { LOGOUT } from '../../../store/actions/types';
+import { LOGOUT } from '../../store/actions/types';
 import Button from '../Button';
 import MenuButton from './MenuButton';
 import MenuList from './MenuList';
 import SideDrawer from './SideDrawer';
 import styles from './index.module.scss';
-import icons from '../../../assets/images/sprite.svg';
+import icons from '../../assets/images/sprite.svg';
 
 const Menu = () => {
   const dispatch = useDispatch();

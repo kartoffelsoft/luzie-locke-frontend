@@ -2,11 +2,11 @@ import { useState, useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import Button from '../../shared/components/Button';
-import Spinner from '../../shared/components/Spinner';
-import Map from '../../shared/components/Map';
+import Button from '../../components/Button';
+import Spinner from '../../components/Spinner';
+import Map from '../../components/Map';
 
-import { useHttpClient } from '../../shared/hooks/http-hook';
+import { useHttpClient } from '../../hooks/http-hook';
 import { updateLocation } from '../../store/actions/auth';
 import styles from './Location.module.scss';
 
