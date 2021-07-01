@@ -1,12 +1,12 @@
-import { AUTH, SET_ACCESS_TOKEN, SET_PROFILE, LOGOUT } from './types';
-import * as api from '../../api/index.js';
+import { AUTH, SET_ACCESS_TOKEN, SET_PROFILE, LOGOUT } from '../constants/actionTypes';
+import * as api from '../api/index.js';
 
 export const loginGoogle = (token, history) => async dispatch => {
   try {
     const res = await api.loginGoogle({ token });
     console.log(res);
     dispatch({ type: AUTH, data: res.data});
-    history.push('/garage');
+    history.push('/items/my');
   } catch (error) {
     console.log(error);
   }

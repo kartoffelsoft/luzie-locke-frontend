@@ -1,5 +1,5 @@
-import { SET_MY_ITEMS } from './types';
-import * as api from '../../api/index.js';
+import { SET_MY_ITEMS } from '../constants/actionTypes';
+import * as api from '../api/index.js';
 
 export const getMyItems = () => async dispatch => {
   try {
@@ -14,7 +14,7 @@ export const createItem = (item, history) => async dispatch => {
   try {
     const { data } = await api.createItem(item);
     console.log(data);
-    history.push('/garage');
+    history.push('/items/my');
   } catch (error) {
     console.log(error);
   }

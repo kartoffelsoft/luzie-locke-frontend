@@ -3,8 +3,8 @@ import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
-import { LOGOUT } from '../../store/actions/types';
-import { refreshToken } from '../../store/actions/auth';
+import { LOGOUT } from '../../constants/actionTypes';
+import { refreshToken } from '../../actions/auth';
 import Menu from '../Menu';
 import styles from './index.module.scss';
 
@@ -43,8 +43,8 @@ function Header() {
         setTitle('My Local');
         break;
 
-      case '/garage':
-      case '/garage/new':
+      case '/items/my':
+      case '/items/create':
         setTitle('My Garage');
         break;
       

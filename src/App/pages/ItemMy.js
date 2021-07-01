@@ -4,11 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { ItemList } from '../../components/Item';
 import CircleButton from '../../components/CircleButton';
-import { getMyItems } from '../../store/actions/item';
+import { getMyItems } from '../../actions/item';
 
-import styles from './Garage.module.scss';
+import styles from './ItemMy.module.scss';
 
-function Garage() {
+function ItemMy() {
   const myItems = useSelector(state => state.item.myItems);
   const history = useHistory();
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ function Garage() {
   }, [ dispatch ]);
   
   const addButtonClickHandler = () => {
-    history.push('/garage/new');
+    history.push('/items/create');
   };
   
   return (
@@ -38,4 +38,4 @@ function Garage() {
   );
 }
 
-export default Garage;
+export default ItemMy;

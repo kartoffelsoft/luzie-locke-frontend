@@ -2,14 +2,19 @@ import Main from './Main';
 import Home from './Home';
 import Login from './Login';
 import Location from './Location';
-import Garage from './Garage';
-import New from './New';
+import ItemMy from './ItemMy';
+import ItemCreate from './ItemCreate';
+
+import ItemDetail from './ItemMy';
+import ItemAll from './ItemMy';
 
 export {
   Main,
   Home,
   Login,
   Location,
-  Garage,
-  New
+  ItemMy,
+  ItemCreate,
+  ItemDetail,
+  ItemAll
 }

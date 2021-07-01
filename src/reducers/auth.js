@@ -1,4 +1,4 @@
-import { AUTH, SET_ACCESS_TOKEN, SET_PROFILE, LOGOUT } from '../actions/types';
+import { AUTH, SET_ACCESS_TOKEN, SET_PROFILE, LOGOUT } from '../constants/actionTypes';
 
 const authReducer = (state = null, action) => {
   switch(action.type) {

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import ScrollToTop from '../components/ScrollToTop';
 import { Main, Login } from './pages';
-import { ping } from '../store/actions/misc';
+import { ping } from '../actions/misc';
 import styles from './index.module.scss';
 
 function App() {

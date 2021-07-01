@@ -10,7 +10,7 @@ const MenuList = (props) => {
             <svg className={styles.menuItemIcon}>
               <use href={icons + "#icon-home"}></use>
             </svg>
-            <a className={styles.menuLink} href="/garage">My Garage</a>
+            <a className={styles.menuLink} href="/items/my">My Garage</a>
           </li>
           <li className={styles.menuItem}>
             <svg className={styles.menuItemIcon}>

@@ -1,4 +1,4 @@
-import { SET_MY_ITEMS } from '../actions/types';
+import { SET_MY_ITEMS } from '../constants/actionTypes';
 
 const initState = { myItems: [] };
 

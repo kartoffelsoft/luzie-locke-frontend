@@ -3,11 +3,11 @@ import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
 import Button from '../../components/Button';
-import { createItem } from '../../store/actions/item';
+import { createItem } from '../../actions/item';
 
-import styles from './New.module.scss';
+import styles from './ItemCreate.module.scss';
 
-function New() {
+function ItemCreate() {
   const [ itemData, setItemData ] = useState({ title: '', price: 0, description: '', images: [] });
 
   const history = useHistory();
@@ -53,4 +53,4 @@ function New() {
   );
 }
 
-export default New;
+export default ItemCreate;

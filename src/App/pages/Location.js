@@ -7,7 +7,7 @@ import Spinner from '../../components/Spinner';
 import Map from '../../components/Map';
 
 import { useHttpClient } from '../../hooks/http-hook';
-import { updateLocation } from '../../store/actions/auth';
+import { updateLocation } from '../../actions/auth';
 import styles from './Location.module.scss';
 
 function Location() {
