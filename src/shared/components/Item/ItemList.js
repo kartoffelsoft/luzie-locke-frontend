@@ -1,5 +1,6 @@
 import Item from './Item';
 
+import defaultImage from '../../../assets/images/box.svg';
 import styles from './ItemList.module.scss';
 
 const ItemList = props => {
@@ -23,7 +24,7 @@ const ItemList = props => {
               key={item._id} 
               id={item._id} 
               price={item.price}
-              image={'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'} 
+              image={defaultImage} 
               title={item.title} 
               location={item.owner.location.name} 
               description={item.description} />

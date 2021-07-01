@@ -4,15 +4,3 @@
   align-items: center;
   justify-content: center;
 }
-
-.googleButton {
-  width: 19rem;
-  height: 4.5rem;
-  background: url("../../assets/images/btn_google_signin_light_normal_web.png") no-repeat;
-  &:hover {
-    background: url("../../assets/images/btn_google_signin_light_focus_web.png") no-repeat;
-  }
-  &:active {
-    background: url("../../assets/images/btn_google_signin_light_pressed_web.png") no-repeat;
-  }
-}
