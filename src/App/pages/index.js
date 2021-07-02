@@ -3,10 +3,10 @@ import Home from './Home';
 import Login from './Login';
 import Location from './Location';
 import ItemMy from './ItemMy';
+import ItemAll from './ItemAll';
+import ItemLocal from './ItemLocal';
 import ItemCreate from './ItemCreate';
-
-import ItemDetail from './ItemMy';
-import ItemAll from './ItemMy';
+import ItemDetail from './ItemDetail';
 
 export {
   Main,
@@ -14,7 +14,8 @@ export {
   Login,
   Location,
   ItemMy,
+  ItemAll,
+  ItemLocal,
   ItemCreate,
-  ItemDetail,
-  ItemAll
+  ItemDetail
 }

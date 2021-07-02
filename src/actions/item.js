@@ -1,5 +1,14 @@
-import { SET_MY_ITEMS } from '../constants/actionTypes';
+import { SET_ITEMS, SET_MY_ITEMS } from '../constants/actionTypes';
 import * as api from '../api/index.js';
+
+export const getItems = () => async dispatch => {
+  try {
+    const { data } = await api.getItems();
+    dispatch({ type: SET_ITEMS, data: data });
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 export const getMyItems = () => async dispatch => {
   try {

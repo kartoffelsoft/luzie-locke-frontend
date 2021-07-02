@@ -4,11 +4,14 @@ const API = axios.create({ baseURL: process.env.REACT_APP_BACKEND_URL });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('accessToken')) {
+    console.log(localStorage.getItem('accessToken'));
     req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`;
   }
 
   return req;
 });
+
+export const getItems = () => API.get('/api/items');
 
 export const getMyItems = () => API.get('/api/items/my/');
 
