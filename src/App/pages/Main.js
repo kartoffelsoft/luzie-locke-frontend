@@ -18,7 +18,7 @@ function Main() {
           <PrivateRoute path='/items/create' locationRequired component={ItemCreate} />
           <PrivateRoute path='/items/:id' locationRequired component={ItemDetail} />
           <Route path='/items' component={ItemAll} />
-          <Route path='/' component={Home} />
+          <Route path='/' component={ItemAll} />
         </Switch>      
       </main>
     </>

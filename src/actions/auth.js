@@ -19,7 +19,6 @@ export const refreshToken = (token, history) => async dispatch => {
     console.log(res.data);
     if (res.data.success) {
       console.log('Token refreshed');
-      console.log(res.data);
       dispatch({ type: SET_ACCESS_TOKEN, data: res.data});
     } else {
       console.log('Token refresh was unsuccessful.');
