@@ -21,7 +21,7 @@ function Header() {
 
     if (access && refresh) {
       const decodedAccess = decode(access);
-      if (decodedAccess.exp * 1000 < new Date().getTime()) {
+      if (decodedAccess.exp * 1000 < new Date().getTime() + 60 * 60 * 1000) {
         const decodedRefresh = decode(refresh);
         if (decodedRefresh.exp * 1000 < new Date().getTime()) {
           dispatch({ type: LOGOUT });
@@ -33,7 +33,7 @@ function Header() {
             console.log(error);
           }
         }
-      };
+      }
     }
   }, [ location, dispatch, history, user ]);
 
