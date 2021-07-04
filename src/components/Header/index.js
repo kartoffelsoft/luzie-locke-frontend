@@ -33,7 +33,7 @@ function Header() {
             console.log(error);
           }
         }
-      }
+      } 
     }
   }, [ location, dispatch, history, user ]);
 
