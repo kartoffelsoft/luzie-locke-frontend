@@ -4,7 +4,7 @@ function Footer() {
   return (
     <>
       <div className={styles.footer}>
-        <b>ⓒ Kartoffelsoft Gmbh.</b> 
+        <b>ⓒ Kartoffelsoft Gmbh.</b>
       </div>
     </>
   );

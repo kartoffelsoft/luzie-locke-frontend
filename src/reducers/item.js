@@ -1,14 +1,17 @@
-import { SET_ITEMS, SET_MY_ITEMS } from '../constants/actionTypes';
+import { SET_ITEM_CURRENT, SET_ITEM_LIST, SET_ITEM_MY_LIST } from '../constants/actionTypes';
 
-const initState = { items: [], myItems: [] };
+const initState = { current: null, list: [], myList: [] };
 
 const itemReducer = (state = initState, action) => {
   switch(action.type) {
-    case SET_ITEMS:
-      return { ...state, items: action.data };
+    case SET_ITEM_CURRENT:
+      return { ...state, current: action.data };
 
-    case SET_MY_ITEMS:
-      return { ...state, myItems: action.data };
+    case SET_ITEM_LIST:
+      return { ...state, list: action.data };
+
+    case SET_ITEM_MY_LIST:
+      return { ...state, myList: action.data };
 
     default:
       return state;

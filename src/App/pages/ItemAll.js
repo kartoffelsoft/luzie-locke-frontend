@@ -9,7 +9,7 @@ import { getItems } from '../../actions/item';
 import styles from './ItemMy.module.scss';
 
 const ItemAll = props => {
-  const items = useSelector(state => state.item.items);
+  const items = useSelector(state => state.item.list);
   // const history = useHistory();
   const dispatch = useDispatch();
 

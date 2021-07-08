@@ -9,7 +9,7 @@ import { getMyItems } from '../../actions/item';
 import styles from './ItemMy.module.scss';
 
 function ItemMy() {
-  const myItems = useSelector(state => state.item.myItems);
+  const myItems = useSelector(state => state.item.myList);
   const history = useHistory();
   const dispatch = useDispatch();
 
