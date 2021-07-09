@@ -20,6 +20,12 @@ const MenuList = (props) => {
           </li>
           <li className={styles.menuItem}>
             <svg className={styles.menuItemIcon}>
+              <use href={icons + "#icon-heart"}></use>
+            </svg>
+            <a className={styles.menuLink} href="/favorites">Favorites</a>
+          </li>
+          <li className={styles.menuItem}>
+            <svg className={styles.menuItemIcon}>
               <use href={icons + "#icon-chat"}></use>
             </svg>
             <a className={styles.menuLink} href="/chats">Chats</a>

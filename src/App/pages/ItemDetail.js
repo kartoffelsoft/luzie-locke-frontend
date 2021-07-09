@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getItem } from '../../actions/item';
 
-import Button from '../../components/Button';
-import icons from '../../assets/images/sprite.svg';
-import styles from './ItemDetail.module.scss';
+import { ItemView } from '../../components/Item';
+import defaultImage from '../../assets/images/box.svg';
 
 const ItemDetail = props => {
   const { id } = useParams();
@@ -17,25 +16,26 @@ const ItemDetail = props => {
   }, [id, dispatch]);
 
   if(item === null) {
-    return <></>
+    return <>
+    </>
   }
 
   return (
     <>
-      <div className={styles.actionContainer}>
-        <svg className={styles.favorite}>
-          <use href={icons + "#icon-heart-outlined"}></use>
-        </svg>
-        <div className={styles.price}>
-          <div className={styles.unit}>€ </div>{item.price}
-        </div>
-        <div className={styles.chat}>
-          <Button>CHAT</Button>
-        </div>
-      </div>
+      <ItemView 
+        id={item._id}
+        price={item.price}
+        image={defaultImage} 
+        title={item.title} 
+        description={item.description}
+        ownerName={item.owner.name}
+        ownerImage={item.owner.pictureURI}
+        ownerReputation={item.owner.reputation}
+        ownerLocation={item.owner.location.name} 
+      />
     </>  
   );
 }
-  
+
 export default ItemDetail;
   

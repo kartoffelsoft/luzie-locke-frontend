@@ -19,6 +19,13 @@
     > img {
       width: 100%;
       height: 15rem;
+      &:hover {
+        position:relative;
+        top:-0.9rem;
+        left:-0.9rem;
+        width:110%;
+        height: 110%;
+      }
     }
   }
 
