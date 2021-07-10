@@ -31,7 +31,8 @@ const ItemDetail = props => {
         ownerName={item.owner.name}
         ownerImage={item.owner.pictureURI}
         ownerReputation={item.owner.reputation}
-        ownerLocation={item.owner.location.name} 
+        ownerLocation={item.owner.location.name}
+        counts={item.counts}
       />
     </>  
   );

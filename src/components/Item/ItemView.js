@@ -4,7 +4,7 @@ import styles from './ItemView.module.scss';
 
 const ItemView = props => {
   return (
-    <>
+    <div className={styles.itemView}>
       <div className={styles.image}>
         <img src={props.image} alt={''} />
       </div>
@@ -28,6 +28,10 @@ const ItemView = props => {
         {props.description}
       </div>
 
+      <div className={styles.count}>
+        Chats 0 ∙ Favorites 0 ∙ Views {props.counts.view}
+      </div>
+
       <div className={styles.action}>
         <svg className={styles.actionFavorite}>
           <use href={icons + "#icon-heart-outlined"}></use>
@@ -39,7 +43,7 @@ const ItemView = props => {
           <Button>CHAT</Button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
