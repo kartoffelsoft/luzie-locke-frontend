@@ -49,11 +49,18 @@
 
 .title {
   width: 100%;
-  padding: 2rem;
-  min-height: 5rem;
+  padding: 2rem 2rem 0rem 2rem;
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--color-black);
+}
+
+.date {
+  width: 100%;
+  padding: 0rem 2rem 0rem 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-grey-dark-2);
 }
 
 .description {

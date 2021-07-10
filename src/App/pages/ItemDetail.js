@@ -28,6 +28,7 @@ const ItemDetail = props => {
         image={defaultImage} 
         title={item.title} 
         description={item.description}
+        createdAt={item.createdAt}
         ownerName={item.owner.name}
         ownerImage={item.owner.pictureURI}
         ownerReputation={item.owner.reputation}

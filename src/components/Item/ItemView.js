@@ -1,4 +1,5 @@
 import Button from '../Button';
+import { getFromNowString } from '../../helpers/Date'
 import icons from '../../assets/images/sprite.svg';
 import styles from './ItemView.module.scss';
 
@@ -22,6 +23,10 @@ const ItemView = props => {
       
       <div className={styles.title}>
         {props.title}
+      </div>
+
+      <div className={styles.date}>
+        {getFromNowString(props.createdAt)}
       </div>
 
       <div className={styles.description}>
