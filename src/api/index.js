@@ -24,4 +24,8 @@ export const refreshToken = (data) => API.post('/api/users/login/refresh', data)
 
 export const updateLocation = (data) => API.patch('/api/users/location', data);
 
+export const getChatInbox = (uid) => API.get(`/api/chat/${uid}`);
+
+export const createChat = (data) => API.post('/api/chat', data);
+
 export const ping = () => API.get('/ping');

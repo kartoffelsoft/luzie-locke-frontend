@@ -29,6 +29,7 @@ const ItemDetail = props => {
         title={item.title} 
         description={item.description}
         createdAt={item.createdAt}
+        ownerId={item.owner._id}
         ownerName={item.owner.name}
         ownerImage={item.owner.pictureURI}
         ownerReputation={item.owner.reputation}

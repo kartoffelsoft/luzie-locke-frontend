@@ -2,7 +2,17 @@ import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from '../../helpers/PrivateRoute';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { Home, Location, ItemMy, ItemAll, ItemLocal, ItemCreate, ItemDetail } from '.';
+import { 
+  Home, 
+  Location, 
+  ItemMy, 
+  ItemAll, 
+  ItemLocal, 
+  ItemCreate, 
+  ItemDetail, 
+  Chat,
+  Inbox
+} from '.';
 
 import styles from './Main.module.scss';
 
@@ -20,6 +30,8 @@ function Main() {
           <PrivateRoute path='/items/local' locationRequired component={ItemLocal} />
           <PrivateRoute path='/items/create' locationRequired component={ItemCreate} />
           <PrivateRoute path='/items/:id' locationRequired component={ItemDetail} />
+          <PrivateRoute path='/chat/:uid' component={Chat} />
+          <PrivateRoute path='/chat' component={Inbox} />
           <Route path='/items' component={ItemAll} />
           <Route path='/' component={ItemAll} />
         </Switch>      
