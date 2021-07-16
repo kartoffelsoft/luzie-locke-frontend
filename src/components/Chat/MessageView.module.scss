@@ -1,0 +1,8 @@
+.container {
+  overflow-y: scroll;
+  width: 95%;
+  max-width: 60rem;
+  height: 81vh;
+  flex-grow: 1;
+  background-color: var(--color-grey-light-1);
+}

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import icons from '../../assets/images/sprite.svg';
 import styles from './MenuList.module.scss';
 
@@ -10,37 +11,37 @@ const MenuList = (props) => {
             <svg className={styles.menuItemIcon}>
               <use href={icons + "#icon-home"}></use>
             </svg>
-            <a className={styles.menuLink} href="/items/my">My Garage</a>
+            <Link className={styles.menuLink} to="/items/my" onClick={props.onMenuClick}>My Garage</Link>
           </li>
           <li className={styles.menuItem}>
             <svg className={styles.menuItemIcon}>
               <use href={icons + "#icon-flag"}></use>
             </svg>
-            <a className={styles.menuLink} href="/local">My Local</a>
+            <Link className={styles.menuLink} to="/local" onClick={props.onMenuClick}>My Local</Link>
           </li>
           <li className={styles.menuItem}>
             <svg className={styles.menuItemIcon}>
               <use href={icons + "#icon-heart"}></use>
             </svg>
-            <a className={styles.menuLink} href="/favorites">Favorites</a>
+            <Link className={styles.menuLink} to="/favorites" onClick={props.onMenuClick}>Favorites</Link>
           </li>
           <li className={styles.menuItem}>
             <svg className={styles.menuItemIcon}>
               <use href={icons + "#icon-chat"}></use>
             </svg>
-            <a className={styles.menuLink} href="/chats">Chats</a>
+            <Link className={styles.menuLink} to="/chats" onClick={props.onMenuClick}>Chats</Link>
           </li>
           <li className={styles.menuItem}>
             <svg className={styles.menuItemIcon}>
               <use href={icons + "#icon-cog"}></use>
             </svg>
-            <a className={styles.menuLink} href="/settings">Settings</a>
+            <Link className={styles.menuLink} to="/settings" onClick={props.onMenuClick}>Settings</Link>
           </li>
           <li className={styles.menuItem} onClick={props.onLogoutHandler}>
             <svg className={styles.menuItemIcon}>
               <use href={icons + "#icon-log-out"}></use>
             </svg>
-            <a className={styles.menuLink} href="/">Logout</a>
+            <Link className={styles.menuLink} to="/" onClick={props.onMenuClick}>Logout</Link>
           </li>
         </ul>
       </div>

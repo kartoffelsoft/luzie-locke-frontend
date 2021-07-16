@@ -1,0 +1,26 @@
+.container {
+  width: 95%;
+  display: flex;
+  max-width: 60rem;
+}
+
+.input {
+  font-family: inherit;
+  font-size: inherit;
+  flex-grow: 1;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary-light-2);
+  padding: .7rem 2rem;
+  margin-right: -3.25rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.icon {
+  margin-top: 0.5rem;
+  height: 1.5rem;
+  width: 4rem;
+  fill: #fff
+}

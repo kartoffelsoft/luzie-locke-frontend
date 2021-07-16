@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import styles from './Item.module.scss';
 
 const Item = props => {
   return (
     <div className={styles.item}>
-      <a href={"/items/" + props.id}>
+      <Link to={'/items/' + props.id}>
         <div className={styles.itemImage}>
           <img src={props.image} alt={''} />
         </div>
@@ -19,7 +20,7 @@ const Item = props => {
             {props.price}
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

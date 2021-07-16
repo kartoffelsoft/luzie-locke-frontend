@@ -7,7 +7,7 @@ import ItemAll from './ItemAll';
 import ItemLocal from './ItemLocal';
 import ItemCreate from './ItemCreate';
 import ItemDetail from './ItemDetail';
-import Chat from './Chat';
+import ChatPage from './ChatPage';
 import Inbox from './Inbox';
 
 export {
@@ -20,6 +20,6 @@ export {
   ItemLocal,
   ItemCreate,
   ItemDetail,
-  Chat,
+  ChatPage,
   Inbox
 }

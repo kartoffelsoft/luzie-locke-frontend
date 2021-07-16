@@ -44,9 +44,7 @@ const ItemView = props => {
         <div className={styles.price}>
           <div className={styles.unit}>€ </div>{props.price}
         </div>
-        <div className={styles.actionChat}>
-          <Button to={`/chat/${props.ownerId}`}>CHAT</Button>
-        </div>
+        <Button className={styles.actionChatButton} to={`/chat/${props.ownerId}`}>CHAT</Button>
       </div>
     </div>
   );

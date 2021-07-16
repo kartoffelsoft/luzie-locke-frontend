@@ -7,6 +7,7 @@ module.exports = Object.freeze({
     SET_ITEM_LIST: 'SET_ITEM_LIST',
     SET_ITEM_MY_LIST: 'SET_ITEM_MY_LIST',
     NEW_ITEM: 'NEW_ITEM',
+    LOGIN: 'LOGIN',
     LOGOUT: 'LOGOUT'
   })
   

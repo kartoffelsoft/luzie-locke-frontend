@@ -36,6 +36,10 @@ const Menu = () => {
     setUser(null);
   }
 
+  const onMenuClick = () => {
+    setDrawerIsOpen(false);
+  }
+
   const renderSideDrawer = () => {
     switch(user) {
       case null:
@@ -67,7 +71,7 @@ const Menu = () => {
             }
           </div>
 
-          <MenuList onLogoutHandler={onLogoutHandler} />
+          <MenuList onMenuClick={onMenuClick} onLogoutHandler={onLogoutHandler} />
         </>;
     }
   };

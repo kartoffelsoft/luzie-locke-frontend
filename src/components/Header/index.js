@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
-import { LOGOUT } from '../../constants/actionTypes';
+import { LOGIN, LOGOUT } from '../../constants/actionTypes';
 import { refreshToken } from '../../actions/auth';
 import Menu from '../Menu';
 import styles from './index.module.scss';
@@ -21,38 +21,35 @@ function Header() {
 
     if (access && refresh) {
       const decodedAccess = decode(access);
+      dispatch({ type: LOGIN });
+
       if (decodedAccess.exp * 1000 < new Date().getTime() + 60 * 60 * 1000) {
         const decodedRefresh = decode(refresh);
         if (decodedRefresh.exp * 1000 < new Date().getTime()) {
           dispatch({ type: LOGOUT });
           history.push('/login');
         } else {
-          try {
-            dispatch(refreshToken(refresh, history));
-          } catch (error) {
-            console.log(error);
-          }
+          dispatch(refreshToken(refresh, history));
         }
       } 
     }
   }, [ location, dispatch, history, user ]);
 
   useEffect(() => {
-    switch(location.pathname) { 
-      case '/local':
+    switch(location.pathname.split('/')[1]) { 
+      case 'local':
         setTitle('My Local');
         break;
 
-      case '/items/my':
-      case '/items/create':
+      case 'items':
         setTitle('My Garage');
         break;
       
-      case '/chats':
+      case 'chat':
         setTitle('Chats');
         break;
 
-      case '/settings':
+      case 'settings':
         setTitle('Settings');
         break;
 
@@ -72,7 +69,7 @@ function Header() {
       </div>
       <div className={styles.header}>
         <div className={styles.logo}>
-          <a href="/"><div className={styles.logoImage} /></a>
+          <Link to="/"><div className={styles.logoImage} /></Link>
           <div className={styles.logoText}>
             {title}
           </div>

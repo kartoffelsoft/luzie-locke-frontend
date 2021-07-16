@@ -1,7 +1,9 @@
 import { Route, Switch } from 'react-router-dom';
+
 import PrivateRoute from '../../helpers/PrivateRoute';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+
 import { 
   Home, 
   Location, 
@@ -10,7 +12,7 @@ import {
   ItemLocal, 
   ItemCreate, 
   ItemDetail, 
-  Chat,
+  ChatPage,
   Inbox
 } from '.';
 
@@ -30,7 +32,7 @@ function Main() {
           <PrivateRoute path='/items/local' locationRequired component={ItemLocal} />
           <PrivateRoute path='/items/create' locationRequired component={ItemCreate} />
           <PrivateRoute path='/items/:id' locationRequired component={ItemDetail} />
-          <PrivateRoute path='/chat/:uid' component={Chat} />
+          <PrivateRoute path='/chat/:nid' component={ChatPage} />
           <PrivateRoute path='/chat' component={Inbox} />
           <Route path='/items' component={ItemAll} />
           <Route path='/' component={ItemAll} />
