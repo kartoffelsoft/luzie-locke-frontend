@@ -16,12 +16,6 @@
   &Photo {
     grid-column: 1/ span 1;
     grid-row: 1 / span 2;
-    display: block;
-    box-sizing: content-box;
-    height: 5rem;
-    width: 5rem;
-    border-radius: 50%;
-    border: 1px solid var(--color-primary-light-2);
   }
 
   &Name {

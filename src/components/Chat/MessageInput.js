@@ -28,7 +28,7 @@ const MessageInput = props => {
           autoComplete="off"
           onChange={onInputChange}
         />
-        <Button onClick={onSendClick}>
+        <Button className={styles.button} onClick={onSendClick}>
           <svg className={styles.icon}>
             <use href={icons + "#icon-paper-plane"}></use>
           </svg>

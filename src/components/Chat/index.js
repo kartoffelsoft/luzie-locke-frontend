@@ -7,30 +7,46 @@ import { useChat } from '../../contexts/ChatProvider';
 import styles from './index.module.scss';
 
 const Chat = props => {
-  const [ chatId, setChatId ] = useState(null);
-  const [ chatMessages, setChatMessages ] = useState([]);
-  const uid = JSON.parse(localStorage.getItem('profile'))._id;
-  const { sendMessage, createChat } = useChat();
-  
+  const [ profile, setProfile ] = useState(null);
+
+  const { sendMessage, createChat, messages } = useChat();
+
   useEffect(() => {
+    console.log("Create Chat")
+
     const f = async () => {
-      const { id, messages } = await createChat({ uid, nid: props.nid });
-      setChatId(id);
-      setChatMessages(messages);
+      const uid = JSON.parse(localStorage.getItem('profile'))._id;
+      const { chatProfile } = await createChat({ uid, nid: props.nid });
+      setProfile(chatProfile);
     };
     f();
-  }, [ uid, props.nid, createChat, setChatId, setChatMessages ]);
+  }, [ props.nid, createChat, setProfile ]);
 
   const onSubmit = (message) => {
-    if (chatId) {
-      sendMessage({ chatId, uid, nid: props.nid, message });
+    if (profile) {
+      sendMessage({ 
+        chatId: profile.chatId, 
+        uid: profile.uid._id, 
+        nid: profile.nid._id, 
+        message 
+      });
     }
+  }
+
+  if (!profile) {
+    return (
+      <div />
+    )
   }
 
   return (
     <>
       <div className={`${styles.container} ${props.className}`}>
-        <MessageView />
+        <MessageView 
+          messages={messages}
+          user={profile.uid}
+          neighbor={profile.nid}
+        />
         <MessageInput onSubmit={onSubmit} />
       </div>
     </>  

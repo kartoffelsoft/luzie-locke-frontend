@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
 import { LOGOUT } from '../../constants/actionTypes';
+import { ProfilePicture } from '../common-ui-elements';
 import Button from '../Button';
 import MenuButton from './MenuButton';
 import MenuList from './MenuList';
@@ -48,7 +49,7 @@ const Menu = () => {
       default:
         return <>
           <div className={styles.user} onClick={onUserClick}>
-            <img src={user.pictureURI} alt="" className={styles.userPhoto} />
+            <ProfilePicture src={user.pictureURI} className={styles.userPhoto} />
             <div className={styles.userName}>
               Hello, {user.name}!
             </div>

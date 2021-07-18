@@ -1,8 +1,104 @@
 .container {
   overflow-y: scroll;
+  padding: 1rem 0;
   width: 95%;
   max-width: 60rem;
   height: 81vh;
   flex-grow: 1;
   background-color: var(--color-grey-light-1);
+}
+
+.user {
+  width: 100%;
+
+  &Message {
+    position: relative;
+    padding: 10px 20px;
+    margin: 0px 20px;
+    color: var(--color-black);
+    background: var(--color-primary-light-1);
+    border-radius: 25px;
+    float: right;
+    hyphens: auto;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      right: -7px;
+      height: 20px;
+      border-right: 20px solid var(--color-primary-light-1);
+      border-top-left-radius: 16px 14px;
+      -webkit-transform: translate(0, 2px);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: -2px;
+      right: -56px;
+      width: 26px;
+      height: 20px;
+      background: var(--color-grey-light-1);
+      border-top-left-radius: 10px;
+      -webkit-transform: translate(-30px, 2px);
+    }
+  }
+}
+
+.neighbor {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 3.5rem auto;
+  grid-template-rows: 2rem auto;
+  
+  &Picture {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+    z-index: 2;
+  }
+
+  &Name {
+    padding-left: 1rem;
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    color: var(--color-primary);
+  }
+
+  &Message {
+    position: relative;
+    padding: 10px 20px;
+    margin: 0px 20px;
+    color: var(--color-black);
+    background: var(--color-grey-light-3);
+    border-radius: 25px;
+    float: left;
+    hyphens: auto;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -7px;
+      height: 20px;
+      border-right: 20px solid var(--color-grey-light-3);
+      border-top-right-radius: 16px 14px;
+      -webkit-transform: translate(0, 2px);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: -2px;
+      left: -56px;
+      width: 26px;
+      height: 20px;
+      background: var(--color-grey-light-1);
+      border-top-right-radius: 10px;
+      -webkit-transform: translate(+30px, 2px);
+    }
+  }
+}
+
+.clear {
+  clear: both;
+  padding: 0.3rem;
 }
