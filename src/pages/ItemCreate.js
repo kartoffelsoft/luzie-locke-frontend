@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
-import Button from '../../components/Button';
-import { createItem } from '../../actions/item';
+import { FlatButton } from '../components-common/button';
+import { createItem } from '../actions/item';
 
 import styles from './ItemCreate.module.scss';
 
@@ -46,7 +46,7 @@ function ItemCreate() {
             <label htmlFor="description" className={styles.formLabel}>Description</label>
           </div>
 
-          <Button className={styles.button} type="submit">REGISTER</Button>
+          <FlatButton className={styles.button} type="submit">REGISTER</FlatButton>
         </form>
       </div>
     </>

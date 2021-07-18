@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 
-import Chat from '../../components/Chat';
+import Chat from '../components/Chat';
 
 // import styles from './ChatPage.module.scss';
 

@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import ScrollToTop from '../components/ScrollToTop';
+import ScrollToTop from './components/ScrollToTop';
 import { Main, Login } from './pages';
-import { SocketProvider } from '../contexts/SocketProvider';
-import { ChatProvider } from '../contexts/ChatProvider';
-import { ping } from '../actions/misc';
-import styles from './index.module.scss';
+import { SocketProvider } from './contexts/SocketProvider';
+import { ChatProvider } from './contexts/ChatProvider';
+import { ping } from './actions/misc';
+import styles from './App.module.scss';
 
 function App() {
   const authenticated = useSelector(state => state.auth.authenticated);

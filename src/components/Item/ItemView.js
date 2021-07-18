@@ -1,4 +1,4 @@
-import Button from '../Button';
+import { FlatButton } from '../../components-common/button';
 import { getFromNowString } from '../../helpers/Date'
 import icons from '../../assets/images/sprite.svg';
 import styles from './ItemView.module.scss';
@@ -44,7 +44,7 @@ const ItemView = props => {
         <div className={styles.price}>
           <div className={styles.unit}>€ </div>{props.price}
         </div>
-        <Button className={styles.actionChatButton} to={`/chat/${props.ownerId}`}>CHAT</Button>
+        <FlatButton className={styles.actionChatButton} to={`/chat/${props.ownerId}`}>CHAT</FlatButton>
       </div>
     </div>
   );

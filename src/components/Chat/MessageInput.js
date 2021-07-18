@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from '../Button';
+import { FlatButton } from '../../components-common/button';
 
 import icons from '../../assets/images/sprite.svg';
 import styles from './MessageInput.module.scss';
@@ -28,11 +28,11 @@ const MessageInput = props => {
           autoComplete="off"
           onChange={onInputChange}
         />
-        <Button className={styles.button} onClick={onSendClick}>
+        <FlatButton className={styles.button} onClick={onSendClick}>
           <svg className={styles.icon}>
             <use href={icons + "#icon-paper-plane"}></use>
           </svg>
-        </Button>
+        </FlatButton>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import styles from './MessageView.module.scss';
-import { ProfilePicture } from '../common-ui-elements'
+import { ProfilePicture } from '../../components-common'
 
 const MessageView = props => {
   console.log(props.messages);

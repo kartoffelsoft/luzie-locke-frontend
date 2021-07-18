@@ -2,12 +2,12 @@ import { useState, useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import Button from '../../components/Button';
-import Spinner from '../../components/Spinner';
-import Map from '../../components/Map';
+import { FlatButton } from '../components-common/button';
+import Spinner from '../components/Spinner';
+import Map from '../components/Map';
 
-import { useHttpClient } from '../../hooks/http-hook';
-import { updateLocation } from '../../actions/auth';
+import { useHttpClient } from '../hooks/http-hook';
+import { updateLocation } from '../actions/auth';
 import styles from './Location.module.scss';
 
 function Location() {
@@ -84,7 +84,7 @@ function Location() {
               <p>You may move a cursor on the map to change your location.</p>
             </div>
             <div className={styles.locationApply}>
-              <Button className={styles.locationApplyButton} onClick={applyButtonClickHandler}>APPLY</Button>
+              <FlatButton className={styles.locationApplyButton} onClick={applyButtonClickHandler}>APPLY</FlatButton>
             </div>
           </div>
         </div>

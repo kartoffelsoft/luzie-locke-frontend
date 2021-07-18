@@ -1,8 +1,8 @@
 import { Route, Switch } from 'react-router-dom';
 
-import PrivateRoute from '../../helpers/PrivateRoute';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import PrivateRoute from '../helpers/PrivateRoute';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 import { 
   Home, 

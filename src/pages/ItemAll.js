@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
-// import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 
-import SearchBar from '../../components/SearchBar';
-import { ItemList } from '../../components/Item';
-import { getItems } from '../../actions/item';
+import SearchBar from '../components/SearchBar';
+import { ItemList } from '../components/Item';
+import { getItems } from '../actions/item';
 
 import styles from './ItemMy.module.scss';
 

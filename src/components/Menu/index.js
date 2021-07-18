@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 
 import { LOGOUT } from '../../constants/actionTypes';
-import { ProfilePicture } from '../common-ui-elements';
+import { ProfilePicture } from '../../components-common';
 import Button from '../Button';
 import MenuButton from './MenuButton';
 import MenuList from './MenuList';

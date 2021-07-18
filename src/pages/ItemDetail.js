@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getItem } from '../../actions/item';
+import { getItem } from '../actions/item';
 
-import { ItemView } from '../../components/Item';
-import defaultImage from '../../assets/images/box.svg';
+import { ItemView } from '../components/Item';
+import defaultImage from '../assets/images/box.svg';
 
 const ItemDetail = props => {
   const { id } = useParams();

@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 
-import { loginGoogle } from '../../actions/auth';
+import { loginGoogle } from '../actions/auth';
 import styles from './Login.module.scss';
 
 function Login() {

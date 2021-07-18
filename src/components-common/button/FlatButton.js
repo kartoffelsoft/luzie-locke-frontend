@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './index.module.scss';
+import styles from './FlatButton.module.scss';
 
-const Button = props => {
+const FlatButton = props => {
   if (props.to) {
     return (
       <Link
@@ -27,4 +27,4 @@ const Button = props => {
   );
 };
 
-export default Button;
+export default FlatButton;

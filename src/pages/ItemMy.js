@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 
-import { ItemList } from '../../components/Item';
-import CircleButton from '../../components/CircleButton';
-import { getMyItems } from '../../actions/item';
+import { ItemList } from '../components/Item';
+import CircleButton from '../components/CircleButton';
+import { getMyItems } from '../actions/item';
 
 import styles from './ItemMy.module.scss';
 
