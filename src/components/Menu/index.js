@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { LOGOUT } from '../../constants/actionTypes';
 import { ProfilePicture } from '../../components-common';
-import Button from '../Button';
+import { FlatButton } from '../../components-common/button';
 import MenuButton from './MenuButton';
 import MenuList from './MenuList';
 import SideDrawer from './SideDrawer';
@@ -67,7 +67,7 @@ const Menu = () => {
             {
               user.location.name === '' && 
               <div className={styles.userSetLocation}>
-                <Button>Set Location</Button>
+                <FlatButton>Set Location</FlatButton>
               </div>
             }
           </div>

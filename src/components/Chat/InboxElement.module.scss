@@ -1,0 +1,54 @@
+.inbox {
+  width: 95%;
+  display: grid;
+  padding: 0.8rem 0;
+  max-width: 60rem;
+  text-decoration: none;
+
+  grid-template-columns: 6rem auto 3rem;
+  grid-template-rows: 2.5rem 2.5rem;
+  align-items: center;
+
+  &Picture {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+  }
+
+  &Name {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+  }
+
+  &LastMessage {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    color: var(--color-grey-dark-3);
+  }
+
+  &Time {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--color-grey-dark-3);
+  }
+
+  &Unseen {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-white);
+
+    &Text {
+      position: relative;
+      padding: 0rem 0.5rem;
+      background-color: #f00;
+      border-radius: 45%;
+      float: right;
+    }
+  }
+}

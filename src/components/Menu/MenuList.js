@@ -29,7 +29,7 @@ const MenuList = (props) => {
             <svg className={styles.menuItemIcon}>
               <use href={icons + "#icon-chat"}></use>
             </svg>
-            <Link className={styles.menuLink} to="/chats" onClick={props.onMenuClick}>Chats</Link>
+            <Link className={styles.menuLink} to="/chat" onClick={props.onMenuClick}>Chats</Link>
           </li>
           <li className={styles.menuItem}>
             <svg className={styles.menuItemIcon}>

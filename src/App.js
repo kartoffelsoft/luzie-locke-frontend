@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from './helpers/ScrollToTop';
 import { Main, Login } from './pages';
 import { SocketProvider } from './contexts/SocketProvider';
 import { ChatProvider } from './contexts/ChatProvider';

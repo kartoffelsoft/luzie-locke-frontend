@@ -10,7 +10,7 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-export const getItem = (id) => API.get(`/api/items/${id}`);
+export const getItem = (pid) => API.get(`/api/items/${pid}`);
 
 export const getItems = () => API.get('/api/items');
 
@@ -24,7 +24,7 @@ export const refreshToken = (data) => API.post('/api/users/login/refresh', data)
 
 export const updateLocation = (data) => API.patch('/api/users/location', data);
 
-export const getChatInbox = (uid) => API.get(`/api/chat/${uid}`);
+export const getInbox = () => API.get(`/api/chat`);
 
 export const createChat = (data) => API.post('/api/chat', data);
 

@@ -12,7 +12,7 @@ import {
   ItemLocal, 
   ItemCreate, 
   ItemDetail, 
-  ChatPage,
+  Chat,
   Inbox
 } from '.';
 
@@ -32,7 +32,7 @@ function Main() {
           <PrivateRoute path='/items/local' locationRequired component={ItemLocal} />
           <PrivateRoute path='/items/create' locationRequired component={ItemCreate} />
           <PrivateRoute path='/items/:id' locationRequired component={ItemDetail} />
-          <PrivateRoute path='/chat/:nid' component={ChatPage} />
+          <PrivateRoute path='/chat/:nid' component={Chat} />
           <PrivateRoute path='/chat' component={Inbox} />
           <Route path='/items' component={ItemAll} />
           <Route path='/' component={ItemAll} />
