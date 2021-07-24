@@ -21,5 +21,5 @@ export {
   ItemCreate,
   ItemDetail,
   Chat,
-  Inbox
-}
+  Inbox,
+};

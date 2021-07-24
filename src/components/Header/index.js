@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
@@ -9,15 +9,15 @@ import Menu from '../Menu';
 import styles from './index.module.scss';
 
 function Header() {
-  const [ title, setTitle ] = useState('Garage Sale');
+  const [title, setTitle] = useState('Garage Sale');
   const user = JSON.parse(localStorage.getItem('profile'));
   const location = useLocation();
   const history = useHistory();
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     const access = JSON.parse(localStorage.getItem('accessToken'));
-    const refresh  = JSON.parse(localStorage.getItem('refreshToken'));
+    const refresh = JSON.parse(localStorage.getItem('refreshToken'));
 
     if (access && refresh) {
       const decodedAccess = decode(access);
@@ -31,12 +31,12 @@ function Header() {
         } else {
           dispatch(refreshToken(refresh, history));
         }
-      } 
+      }
     }
-  }, [ location, dispatch, history, user ]);
+  }, [location, dispatch, history, user]);
 
   useEffect(() => {
-    switch(location.pathname.split('/')[1]) { 
+    switch (location.pathname.split('/')[1]) {
       case 'local':
         setTitle('My Local');
         break;
@@ -44,7 +44,7 @@ function Header() {
       case 'items':
         setTitle('My Garage');
         break;
-      
+
       case 'chat':
         setTitle('Chats');
         break;
@@ -57,7 +57,7 @@ function Header() {
         setTitle('Garage Sale');
         break;
     }
-  }, [ location ]);
+  }, [location]);
 
   return (
     <>
@@ -69,10 +69,10 @@ function Header() {
       </div>
       <div className={styles.header}>
         <div className={styles.logo}>
-          <Link to="/"><div className={styles.logoImage} /></Link>
-          <div className={styles.logoText}>
-            {title}
-          </div>
+          <Link to="/">
+            <div className={styles.logoImage} />
+          </Link>
+          <div className={styles.logoText}>{title}</div>
         </div>
       </div>
     </>

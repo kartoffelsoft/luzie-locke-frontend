@@ -1,5 +1,3 @@
 import ProfilePicture from './ProfilePicture';
 
-export {
-  ProfilePicture
-}
+export { ProfilePicture };

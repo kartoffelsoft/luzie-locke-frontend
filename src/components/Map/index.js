@@ -23,25 +23,27 @@ class Map extends Component {
       mapTypeControl: false,
     });
 
-    const marker = new window.google.maps.Marker({ 
-      position: this.props.center, 
-      map: this.map, 
-      draggable: true });
+    const marker = new window.google.maps.Marker({
+      position: this.props.center,
+      map: this.map,
+      draggable: true,
+    });
 
     new window.google.maps.event.addListener(marker, 'dragend', (evt) => {
       console.log(this.props);
-      this.props.onMarkerChange({ lat: evt.latLng.lat(), lng: evt.latLng.lng() });
+      this.props.onMarkerChange({
+        lat: evt.latLng.lat(),
+        lng: evt.latLng.lng(),
+      });
     });
   }
 
-  shouldComponentUpdate(nextProps, nextState){
-    return this.props === null; 
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props === null;
   }
 
   render() {
-    return (
-      <div ref={this.mapRef} className={styles.map}></div>
-    )
+    return <div ref={this.mapRef} className={styles.map}></div>;
   }
 }
 

@@ -10,21 +10,21 @@ import { ping } from './actions/misc';
 import styles from './App.module.scss';
 
 function App() {
-  const authenticated = useSelector(state => state.auth.authenticated);
-  const [ uid, setUid ] = useState(null);
+  const authenticated = useSelector((state) => state.auth.authenticated);
+  const [uid, setUid] = useState(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(ping());
-  }, [ dispatch ]);
+  }, [dispatch]);
 
   useEffect(() => {
     if (authenticated) {
       setUid(JSON.parse(localStorage.getItem('profile'))._id);
     } else {
-      setUid(null)
+      setUid(null);
     }
-  }, [ authenticated ]);
+  }, [authenticated]);
 
   return (
     <div className={styles.container}>
@@ -33,10 +33,10 @@ function App() {
           <BrowserRouter>
             <ScrollToTop>
               <Switch>
-                <Route path='/login' component={Login} />
-                <Route path='/' component={Main} />
-              </Switch>    
-            </ScrollToTop>  
+                <Route path="/login" component={Login} />
+                <Route path="/" component={Main} />
+              </Switch>
+            </ScrollToTop>
           </BrowserRouter>
         </ChatProvider>
       </SocketProvider>

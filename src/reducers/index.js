@@ -7,7 +7,7 @@ import item from './item';
 const rootReducer = combineReducers({
   auth,
   chat,
-  item
+  item,
 });
 
-export default rootReducer; 
+export default rootReducer;

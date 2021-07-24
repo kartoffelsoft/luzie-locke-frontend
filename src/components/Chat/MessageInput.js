@@ -4,8 +4,8 @@ import { FlatButton } from '../../components-common/button';
 import icons from '../../assets/images/sprite.svg';
 import styles from './MessageInput.module.scss';
 
-const MessageInput = props => {
-  const [ message, setMessage ] = useState('');
+const MessageInput = (props) => {
+  const [message, setMessage] = useState('');
 
   const onInputChange = (e) => {
     setMessage(e.target.value);
@@ -13,7 +13,7 @@ const MessageInput = props => {
 
   const onSendClick = () => {
     if (message !== '') {
-      props.onSubmit(message)
+      props.onSubmit(message);
       setMessage('');
     }
   };
@@ -30,12 +30,12 @@ const MessageInput = props => {
         />
         <FlatButton className={styles.button} onClick={onSendClick}>
           <svg className={styles.icon}>
-            <use href={icons + "#icon-paper-plane"}></use>
+            <use href={icons + '#icon-paper-plane'}></use>
           </svg>
         </FlatButton>
       </div>
     </>
   );
-}
+};
 
 export default MessageInput;

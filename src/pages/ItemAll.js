@@ -7,15 +7,15 @@ import { getItems } from '../actions/item';
 
 import styles from './ItemMy.module.scss';
 
-const ItemAll = props => {
-  const items = useSelector(state => state.item.list);
+const ItemAll = (props) => {
+  const items = useSelector((state) => state.item.list);
   // const history = useHistory();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getItems());
-  }, [ dispatch ]);
-  
+  }, [dispatch]);
+
   return (
     <>
       <div className={styles.itemAll}>
@@ -24,6 +24,6 @@ const ItemAll = props => {
       </div>
     </>
   );
-}
+};
 
 export default ItemAll;

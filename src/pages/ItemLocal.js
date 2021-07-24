@@ -1,10 +1,5 @@
-const ItemLocal = props => {
-    return (
-      <>
-        ItemLocal
-      </>  
-    );
-  }
-  
-  export default ItemLocal;
-  
+const ItemLocal = (props) => {
+  return <>ItemLocal</>;
+};
+
+export default ItemLocal;

@@ -4,7 +4,9 @@ const API = axios.create({ baseURL: process.env.REACT_APP_BACKEND_URL });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('accessToken')) {
-    req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`;
+    req.headers.Authorization = `Bearer ${JSON.parse(
+      localStorage.getItem('accessToken')
+    )}`;
   }
 
   return req;
@@ -20,7 +22,8 @@ export const createItem = (data) => API.post('/api/items/', data);
 
 export const loginGoogle = (data) => API.post('/api/users/login/google', data);
 
-export const refreshToken = (data) => API.post('/api/users/login/refresh', data);
+export const refreshToken = (data) =>
+  API.post('/api/users/login/refresh', data);
 
 export const updateLocation = (data) => API.patch('/api/users/location', data);
 

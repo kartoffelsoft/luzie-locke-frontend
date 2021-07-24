@@ -8,8 +8,8 @@ function ScrollToTop({ history, children }) {
     });
     return () => {
       unlisten();
-    }
-  }, [ history ]);
+    };
+  }, [history]);
 
   return <Fragment>{children}</Fragment>;
 }

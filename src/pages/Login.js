@@ -12,20 +12,20 @@ function Login() {
   const onGoogleSuccess = async (res) => {
     const token = res?.accessToken;
     try {
-      dispatch(loginGoogle( token, history));
+      dispatch(loginGoogle(token, history));
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const onGoogleFailure = (error) => {
     console.log(error);
-  }
+  };
 
   return (
     <div className={styles.container}>
       <GoogleLogin
-        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID} 
+        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
         onSuccess={onGoogleSuccess}
         onFailure={onGoogleFailure}
         cookiePolicy={'single_host_origin'}

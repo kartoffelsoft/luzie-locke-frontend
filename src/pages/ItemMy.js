@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { ItemList } from '../components/Item';
@@ -9,18 +9,18 @@ import { getMyItems } from '../actions/item';
 import styles from './ItemMy.module.scss';
 
 function ItemMy() {
-  const myItems = useSelector(state => state.item.myList);
+  const myItems = useSelector((state) => state.item.myList);
   const history = useHistory();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getMyItems());
-  }, [ dispatch ]);
-  
+  }, [dispatch]);
+
   const addButtonClickHandler = () => {
     history.push('/items/create');
   };
-  
+
   return (
     <>
       <div className={styles.add}>

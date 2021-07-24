@@ -4,16 +4,16 @@ import PrivateRoute from '../helpers/PrivateRoute';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import { 
-  Home, 
-  Location, 
-  ItemMy, 
-  ItemAll, 
-  ItemLocal, 
-  ItemCreate, 
-  ItemDetail, 
+import {
+  Home,
+  Location,
+  ItemMy,
+  ItemAll,
+  ItemLocal,
+  ItemCreate,
+  ItemDetail,
   Chat,
-  Inbox
+  Inbox,
 } from '.';
 
 import styles from './Main.module.scss';
@@ -26,17 +26,29 @@ function Main() {
       </header>
       <main className={styles.main}>
         <Switch>
-          <PrivateRoute path='/settings' component={Location} />
-          <Route path='/items/search/:keyword' component={Home} />
-          <PrivateRoute path='/items/my' locationRequired component={ItemMy} />
-          <PrivateRoute path='/items/local' locationRequired component={ItemLocal} />
-          <PrivateRoute path='/items/create' locationRequired component={ItemCreate} />
-          <PrivateRoute path='/items/:id' locationRequired component={ItemDetail} />
-          <PrivateRoute path='/chat/:nid' component={Chat} />
-          <PrivateRoute path='/chat' component={Inbox} />
-          <Route path='/items' component={ItemAll} />
-          <Route path='/' component={ItemAll} />
-        </Switch>      
+          <PrivateRoute path="/settings" component={Location} />
+          <Route path="/items/search/:keyword" component={Home} />
+          <PrivateRoute path="/items/my" locationRequired component={ItemMy} />
+          <PrivateRoute
+            path="/items/local"
+            locationRequired
+            component={ItemLocal}
+          />
+          <PrivateRoute
+            path="/items/create"
+            locationRequired
+            component={ItemCreate}
+          />
+          <PrivateRoute
+            path="/items/:id"
+            locationRequired
+            component={ItemDetail}
+          />
+          <PrivateRoute path="/chat/:nid" component={Chat} />
+          <PrivateRoute path="/chat" component={Inbox} />
+          <Route path="/items" component={ItemAll} />
+          <Route path="/" component={ItemAll} />
+        </Switch>
       </main>
       <footer>
         <Footer />

@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom';
 
 import styles from './FlatButton.module.scss';
 
-const FlatButton = props => {
+const FlatButton = (props) => {
   if (props.to) {
     return (
-      <Link
-        to={props.to}
-        className={`${styles.button} ${props.className}`}
-      >
+      <Link to={props.to} className={`${styles.button} ${props.className}`}>
         {props.children}
       </Link>
     );
