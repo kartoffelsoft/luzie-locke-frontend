@@ -8,10 +8,10 @@ const MessageView = (props) => {
     <>
       <div className={`${styles.container} ${props.className}`}>
         {props.messages.map((message, index) => {
-          if (message.uid === props.user._id) {
+          if (message.author === props.user._id) {
             return (
               <div className={styles.user} key={index}>
-                <div className={styles.userMessage}>{message.message}</div>
+                <div className={styles.userMessage}>{message.body}</div>
                 <div className={styles.clear} />
               </div>
             );
@@ -26,7 +26,7 @@ const MessageView = (props) => {
               />
               <div className={styles.neighborName}>{props.neighbor.name}</div>
               <div>
-                <div className={styles.neighborMessage}>{message.message}</div>
+                <div className={styles.neighborMessage}>{message.body}</div>
                 <div className={styles.clear} />
               </div>
             </div>

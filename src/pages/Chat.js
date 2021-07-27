@@ -10,26 +10,26 @@ const Chat = (props) => {
   const nid = useParams().nid;
   const [profile, setProfile] = useState(null);
 
-  const { sendMessage, createChat, messages } = useChat();
+  const { sendMessage, startChat, messages } = useChat();
 
   useEffect(() => {
     console.log('Create Chat');
 
     const f = async () => {
       const uid = JSON.parse(localStorage.getItem('profile'))._id;
-      const { chatProfile } = await createChat({ uid, nid });
+      const { chatProfile } = await startChat({ uid, nid });
       setProfile(chatProfile);
     };
     f();
-  }, [nid, createChat, setProfile]);
+  }, [nid, startChat, setProfile]);
 
   const onSubmit = (message) => {
     if (profile) {
       sendMessage({
         chatId: profile.chatId,
-        uid: profile.uid._id,
+        author: profile.uid._id,
         nid: profile.nid._id,
-        message,
+        body: message,
       });
     }
   };

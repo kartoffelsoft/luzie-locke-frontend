@@ -28,18 +28,18 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <SocketProvider uid={uid}>
-        <ChatProvider>
-          <BrowserRouter>
+      <BrowserRouter>
+        <SocketProvider uid={uid}>
+          <ChatProvider path="/chat">
             <ScrollToTop>
               <Switch>
                 <Route path="/login" component={Login} />
                 <Route path="/" component={Main} />
               </Switch>
             </ScrollToTop>
-          </BrowserRouter>
-        </ChatProvider>
-      </SocketProvider>
+          </ChatProvider>
+        </SocketProvider>
+      </BrowserRouter>
     </div>
   );
 }

@@ -29,6 +29,6 @@ export const updateLocation = (data) => API.patch('/api/users/location', data);
 
 export const getInbox = () => API.get(`/api/chat`);
 
-export const createChat = (data) => API.post('/api/chat', data);
+export const startChat = (data) => API.post('/api/chat', data);
 
 export const ping = () => API.get('/ping');
