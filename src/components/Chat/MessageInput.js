@@ -11,7 +11,9 @@ const MessageInput = (props) => {
     setMessage(e.target.value);
   };
 
-  const onSendClick = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+
     if (message !== '') {
       props.onSubmit(message);
       setMessage('');
@@ -20,7 +22,10 @@ const MessageInput = (props) => {
 
   return (
     <>
-      <div className={`${styles.container} ${props.className}`}>
+      <form
+        className={`${styles.container} ${props.className}`}
+        onSubmit={onSubmit}
+      >
         <input
           className={styles.input}
           value={message}
@@ -28,12 +33,12 @@ const MessageInput = (props) => {
           autoComplete="off"
           onChange={onInputChange}
         />
-        <FlatButton className={styles.button} onClick={onSendClick}>
+        <FlatButton className={styles.button} type="submit">
           <svg className={styles.icon}>
             <use href={icons + '#icon-paper-plane'}></use>
           </svg>
         </FlatButton>
-      </div>
+      </form>
     </>
   );
 };

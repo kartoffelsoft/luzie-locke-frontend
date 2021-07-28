@@ -29,7 +29,7 @@ export function ChatProvider({ path, children }) {
       return () => socket.off('receive-message');
     }
     // eslint-disable-next-line
-  }, [socket]);
+  }, [socket, currentChatId]);
 
   useEffect(() => {
     if (!location.pathname.startsWith('/chat/')) {

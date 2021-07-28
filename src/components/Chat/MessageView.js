@@ -1,8 +1,19 @@
+import { useEffect, useRef } from 'react';
 import styles from './MessageView.module.scss';
 import { ProfilePicture } from '../../components-common';
 
 const MessageView = (props) => {
-  console.log(props.messages);
+  const messagesEndRef = useRef();
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+        inline: 'nearest',
+      });
+    }
+  });
 
   return (
     <>
@@ -32,6 +43,7 @@ const MessageView = (props) => {
             </div>
           );
         })}
+        <div ref={messagesEndRef} />
       </div>
     </>
   );
