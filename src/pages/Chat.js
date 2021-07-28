@@ -41,12 +41,16 @@ const Chat = (props) => {
   return (
     <>
       <div className={`${styles.container} ${props.className}`}>
-        <MessageView
-          messages={messages}
-          user={profile.uid}
-          neighbor={profile.nid}
-        />
-        <MessageInput onSubmit={onSubmit} />
+        <div className={styles.view}>
+          <MessageView
+            messages={messages}
+            user={profile.uid}
+            neighbor={profile.nid}
+          />
+        </div>
+        <div className={styles.input}>
+          <MessageInput onSubmit={onSubmit} />
+        </div>
       </div>
     </>
   );

@@ -5,11 +5,10 @@ import SearchBar from '../components/SearchBar';
 import { ItemList } from '../components/Item';
 import { getItems } from '../actions/item';
 
-import styles from './ItemMy.module.scss';
+import styles from './ItemAll.module.scss';
 
 const ItemAll = (props) => {
   const items = useSelector((state) => state.item.list);
-  // const history = useHistory();
   const dispatch = useDispatch();
 
   useEffect(() => {

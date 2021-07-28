@@ -1,16 +1,12 @@
 .container {
   overflow-y: scroll;
   padding: 1rem 0;
-  width: 95%;
-  max-width: 60rem;
-  height: 81vh;
-  flex-grow: 1;
+  width: 100%;
   background-color: var(--color-grey-light-1);
 }
 
 .user {
   width: 100%;
-  margin: 0px -10px;
 
   &Message {
     position: relative;
@@ -20,28 +16,30 @@
     border-radius: 25px;
     float: right;
     hyphens: auto;
-    &:before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      right: -7px;
-      height: 20px;
-      border-right: 20px solid var(--color-primary-light-1);
-      border-top-left-radius: 16px 14px;
-      -webkit-transform: translate(0, 2px);
-    }
-    &:after {
-      content: '';
-      position: absolute;
-      z-index: 1;
-      top: -2px;
-      right: -56px;
-      width: 26px;
-      height: 20px;
-      background: var(--color-grey-light-1);
-      border-top-left-radius: 10px;
-      -webkit-transform: translate(-30px, 2px);
-    }
+    border-top-right-radius: 0px;
+
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   top: -2px;
+    //   right: -7px;
+    //   height: 20px;
+    //   border-right: 20px solid var(--color-primary-light-1);
+    //   border-top-left-radius: 16px 14px;
+    //   -webkit-transform: translate(0, 2px);
+    // }
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   z-index: 1;
+    //   top: -2px;
+    //   right: -56px;
+    //   width: 26px;
+    //   height: 20px;
+    //   background: var(--color-grey-light-1);
+    //   border-top-left-radius: 10px;
+    //   -webkit-transform: translate(-30px, 2px);
+    // }
   }
 }
 

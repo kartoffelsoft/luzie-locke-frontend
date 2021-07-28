@@ -6,6 +6,8 @@ import decode from 'jwt-decode';
 import { LOGIN, LOGOUT } from '../../constants/actionTypes';
 import { refreshToken } from '../../actions/auth';
 import Menu from '../Menu';
+import NotificationPanel from './NotificationPanel';
+
 import styles from './index.module.scss';
 
 function Header() {
@@ -73,6 +75,9 @@ function Header() {
             <div className={styles.logoImage} />
           </Link>
           <div className={styles.logoText}>{title}</div>
+        </div>
+        <div>
+          <NotificationPanel />
         </div>
       </div>
     </>

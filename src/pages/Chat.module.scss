@@ -1,7 +1,30 @@
 .container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.view {
+  width: 95%;
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 80vh;
+}
+
+.input {
+  position: fixed;
+  bottom: 1rem;
+  width: 95%;
+  max-width: 60rem;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-white);
+  z-index: 5;
 }
