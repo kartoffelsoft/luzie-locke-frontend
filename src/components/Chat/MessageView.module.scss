@@ -1,5 +1,6 @@
 .container {
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 1rem 0;
   width: 95%;
   max-width: 60rem;
@@ -18,6 +19,7 @@
     float: right;
     hyphens: auto;
     border-top-right-radius: 0px;
+    font-size: 1.2rem;
 
     // &:before {
     //   content: '';
@@ -61,6 +63,7 @@
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
     color: var(--color-primary);
+    font-size: 1.2rem;
   }
 
   &Message {
@@ -72,6 +75,7 @@
     border-radius: 25px;
     float: left;
     hyphens: auto;
+    font-size: 1.2rem;
     &:before {
       content: '';
       position: absolute;

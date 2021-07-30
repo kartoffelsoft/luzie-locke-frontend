@@ -1,18 +1,5 @@
-import {
-  SET_ITEM_CURRENT,
-  SET_ITEM_LIST,
-  SET_ITEM_MY_LIST,
-} from '../constants/actionTypes';
+import { SET_ITEM_LIST, SET_ITEM_MY_LIST } from '../constants/actionTypes';
 import * as api from '../api/index.js';
-
-export const getItem = (pid) => async (dispatch) => {
-  try {
-    const { data } = await api.getItem(pid);
-    dispatch({ type: SET_ITEM_CURRENT, data: data });
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 export const getItems = () => async (dispatch) => {
   try {

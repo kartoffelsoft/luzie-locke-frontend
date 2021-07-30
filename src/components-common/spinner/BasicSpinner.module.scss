@@ -12,6 +12,7 @@
   color: official;
   display: inline-block;
   position: relative;
+  padding-left: 20px;
   width: 60px;
   height: 60px;
 }
@@ -30,7 +31,7 @@
   width: 2px;
   height: 6px;
   border-radius: 20%;
-  background: var(--color-grey-dark-3);
+  background: var(--color-primary);
 }
 
 .ldsSpinner div:nth-child(1) {

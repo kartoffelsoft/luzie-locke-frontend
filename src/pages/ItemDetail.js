@@ -1,22 +1,29 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getItem } from '../actions/item';
 
+import * as api from '../api/index.js';
+import { BasicSpinner } from '../components-common/spinner';
 import { ItemView } from '../components/Item';
 import defaultImage from '../assets/images/box.svg';
 
 const ItemDetail = (props) => {
-  const { id } = useParams();
-  const item = useSelector((state) => state.item.current);
-  const dispatch = useDispatch();
+  const { pid } = useParams();
+  const [item, setItem] = useState(null);
 
   useEffect(() => {
-    dispatch(getItem(id));
-  }, [id, dispatch]);
+    const getItem = async () => {
+      try {
+        const { data } = await api.getItem(pid);
+        setItem(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getItem();
+  }, [pid]);
 
   if (item === null) {
-    return <></>;
+    return <BasicSpinner />;
   }
 
   return (

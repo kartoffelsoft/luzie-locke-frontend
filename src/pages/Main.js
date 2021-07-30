@@ -40,7 +40,7 @@ function Main() {
             component={ItemCreate}
           />
           <PrivateRoute
-            path="/items/:id"
+            path="/items/:pid"
             locationRequired
             component={ItemDetail}
           />

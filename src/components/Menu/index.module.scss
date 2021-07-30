@@ -2,7 +2,7 @@
   position: relative;
   top: 0.5rem;
   height: 6rem;
-  width: 10rem;
+  width: 8rem;
 }
 
 .user {
@@ -37,7 +37,11 @@
     &Icon {
       height: 2rem;
       width: 2rem;
-      background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary));
+      background-image: linear-gradient(
+        to right,
+        var(--color-primary-light),
+        var(--color-primary)
+      );
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;

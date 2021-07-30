@@ -6,13 +6,25 @@ const MessageView = (props) => {
   const messagesEndRef = useRef();
 
   useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end',
-        inline: 'nearest',
-      });
+    function handleResize() {
+      if (messagesEndRef.current) {
+        messagesEndRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end',
+          inline: 'nearest',
+        });
+      }
     }
+    handleResize();
+    window.visualViewport.addEventListener('resize', handleResize);
+
+    // if (messagesEndRef.current) {
+    //   messagesEndRef.current.scrollIntoView({
+    //     behavior: 'smooth',
+    //     block: 'end',
+    //     inline: 'nearest',
+    //   });
+    // }
   });
 
   return (

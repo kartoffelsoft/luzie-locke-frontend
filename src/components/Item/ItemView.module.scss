@@ -6,7 +6,7 @@
   width: 100%;
   height: 25rem;
 
-  >img {
+  > img {
     width: 100%;
     height: 25rem;
   }
@@ -20,7 +20,7 @@
   align-items: center;
   border-bottom: 1px solid var(--color-grey-light-3);
 
-  >img {
+  > img {
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
@@ -93,12 +93,16 @@
   justify-content: space-between;
   align-items: center;
   z-index: 5;
-  
+
   &Favorite {
     height: 2.5rem;
     width: 5rem;
     margin: 1rem 2rem;
-    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary));
+    background-image: linear-gradient(
+      to right,
+      var(--color-primary-light),
+      var(--color-primary)
+    );
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -111,7 +115,7 @@
     margin: 2rem;
     width: 12rem;
     font-size: 1.5rem;
-  }  
+  }
 }
 
 .price {
