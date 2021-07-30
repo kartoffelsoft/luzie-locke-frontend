@@ -8,7 +8,7 @@ const NotificationPanel = (props) => {
     <>
       <div className={styles.container}>
         <ul style={{ listStyle: 'none' }}>
-          <li>
+          <li style={{ height: '3rem', width: '3rem' }}>
             <Link to="/chat">
               <svg className={styles.chat}>
                 <use href={icons + '#icon-chat'}></use>

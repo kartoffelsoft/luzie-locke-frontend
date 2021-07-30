@@ -6,15 +6,10 @@
 
 .chat {
   margin-top: 0.7rem;
-  height: 1.7rem;
-  width: 1.7rem;
-  background-image: linear-gradient(
-    to right,
-    var(--color-primary-light),
-    var(--color-primary)
-  );
+  height: 1.9rem;
+  width: 1.9rem;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  fill: var(--color-primary);
+  fill: var(--color-primary-light-2);
 }

@@ -26,6 +26,7 @@ const Inbox = (props) => {
               name={e.nid.name}
               lastMessage={e.lastMessage}
               unseen={e.counts.unseen}
+              updatedAt={e.updatedAt}
             />
           );
         })}
