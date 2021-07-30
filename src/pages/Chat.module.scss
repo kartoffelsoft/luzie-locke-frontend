@@ -9,13 +9,14 @@
 
 .view {
   position: fixed;
-  top: 8rem;
+  top: 7rem;
   bottom: 5rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  background-color: var(--color-white);
 }
 
 .input {

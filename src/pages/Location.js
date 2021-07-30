@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { FlatButton } from '../components-common/button';
-import Spinner from '../components/Spinner';
+import { BasicSpinner } from '../components-common/spinner';
 import Map from '../components/Map';
 
 import { useHttpClient } from '../hooks/http-hook';
@@ -75,11 +75,7 @@ function Location() {
   };
 
   if (coordinates === null) {
-    return (
-      <div className={styles.container}>
-        <Spinner />
-      </div>
-    );
+    return <BasicSpinner />;
   }
 
   return (

@@ -4,7 +4,7 @@
   padding: 1rem 0;
   width: 95%;
   max-width: 60rem;
-  background-color: var(--color-grey-light-1);
+  background-color: var(--color-white);
 }
 
 .user {
@@ -13,6 +13,7 @@
   &Message {
     position: relative;
     padding: 10px 20px;
+    margin-right: 1rem;
     color: var(--color-black);
     background: var(--color-primary-light-1);
     border-radius: 25px;
@@ -21,28 +22,28 @@
     border-top-right-radius: 0px;
     font-size: 1.2rem;
 
-    // &:before {
-    //   content: '';
-    //   position: absolute;
-    //   top: -2px;
-    //   right: -7px;
-    //   height: 20px;
-    //   border-right: 20px solid var(--color-primary-light-1);
-    //   border-top-left-radius: 16px 14px;
-    //   -webkit-transform: translate(0, 2px);
-    // }
-    // &:after {
-    //   content: '';
-    //   position: absolute;
-    //   z-index: 1;
-    //   top: -2px;
-    //   right: -56px;
-    //   width: 26px;
-    //   height: 20px;
-    //   background: var(--color-grey-light-1);
-    //   border-top-left-radius: 10px;
-    //   -webkit-transform: translate(-30px, 2px);
-    // }
+    &:before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      right: -7px;
+      height: 20px;
+      border-right: 20px solid var(--color-primary-light-1);
+      border-top-left-radius: 16px 14px;
+      -webkit-transform: translate(0, 2px);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: -2px;
+      right: -56px;
+      width: 26px;
+      height: 20px;
+      background: var(--color-white);
+      border-top-left-radius: 10px;
+      -webkit-transform: translate(-30px, 2px);
+    }
   }
 }
 
