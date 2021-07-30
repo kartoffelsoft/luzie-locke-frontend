@@ -1,7 +1,8 @@
 .container {
   overflow-y: scroll;
   padding: 1rem 0;
-  width: 100%;
+  width: 95%;
+  max-width: 60rem;
   background-color: var(--color-grey-light-1);
 }
 

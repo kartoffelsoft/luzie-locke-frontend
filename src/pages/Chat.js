@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { MessageInput, MessageView } from '../components/chat';
+import { BasicSpinner } from '../components-common/spinner';
 import { useChat } from '../contexts/ChatProvider';
 
 import styles from './Chat.module.scss';
@@ -35,7 +36,7 @@ const Chat = (props) => {
   };
 
   if (!profile) {
-    return <div />;
+    return <BasicSpinner />;
   }
 
   return (
