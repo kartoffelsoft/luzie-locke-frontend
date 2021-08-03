@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  grid-row-gap: 0.5rem;
+  grid-column-gap: 0.5rem;
+}
+
+.photo {
+  position: relative;
+
+  &Image {
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid var(--color-primary);
+  }
+
+  &Delete {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    background-color: var(--color-white);
+    font-size: 1.2rem;
+    &:before {
+      color: var(--color-primary);
+      content: '✕';
+    }
+  }
+}
+
+.add {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid var(--color-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &Icon {
+    position: relative;
+    font-size: 3.2rem;
+    color: var(--color-primary);
+
+    &::before {
+      display: block;
+      content: '+';
+    }
+  }
+}

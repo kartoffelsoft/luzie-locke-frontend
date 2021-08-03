@@ -22,7 +22,7 @@ const ItemList = (props) => {
           key={item._id}
           id={item._id}
           price={item.price}
-          image={defaultImage}
+          image={item.images[0] ? item.images[0] : defaultImage}
           title={item.title}
           location={item.owner.location.name}
           description={item.description}
