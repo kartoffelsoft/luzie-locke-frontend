@@ -42,6 +42,7 @@ const SwipeImageViewer = (props) => {
                     ? `${styles.bulletActive}`
                     : `${styles.bulletInactive}`
                 }
+                key={i}
               ></div>
             );
           })}

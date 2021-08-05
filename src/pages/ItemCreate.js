@@ -95,6 +95,8 @@ function ItemCreate() {
           <div className={styles.formGroup}>
             <input
               type="number"
+              step="0.01"
+              min="0"
               className={styles.formInput}
               placeholder="Price"
               id="price"

@@ -10,6 +10,7 @@ const ItemView = (props) => {
     props.images[0] = defaultImage;
   }
 
+  console.log(props.description);
   return (
     <div className={styles.itemView}>
       <SwipeImageViewer images={props.images} />
