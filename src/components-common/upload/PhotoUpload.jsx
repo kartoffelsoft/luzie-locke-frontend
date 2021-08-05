@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Resizer from 'react-image-file-resizer';
 
 import styles from './PhotoUpload.module.scss';
@@ -27,7 +27,6 @@ const PhotoUpload = (props) => {
 
   const onAddClick = () => {
     fileRef.current.click();
-    console.log('@');
   };
 
   const onDeleteClick = (e) => {
@@ -47,7 +46,7 @@ const PhotoUpload = (props) => {
     <div className={styles.container}>
       {props.photos.map((photo, i) => {
         return (
-          <div className={styles.photo}>
+          <div className={styles.photo} key={i}>
             <img className={styles.photoImage} src={photo} alt="" />
             <div
               className={styles.photoDelete}

@@ -1,13 +1,14 @@
 .container {
   width: 100%;
+  padding: 4rem 0rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-  grid-row-gap: 0.5rem;
-  grid-column-gap: 0.5rem;
 }
 
 .photo {
   position: relative;
+  width: 10rem;
+  height: 10rem;
 
   &Image {
     width: 10rem;
@@ -18,7 +19,7 @@
   &Delete {
     position: absolute;
     top: 0.5rem;
-    right: 1rem;
+    right: 0.5rem;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -35,7 +36,7 @@
 .add {
   width: 10rem;
   height: 10rem;
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-primary-light-1);
 
   display: flex;
   align-items: center;

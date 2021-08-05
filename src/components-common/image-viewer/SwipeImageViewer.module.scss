@@ -1,0 +1,56 @@
+.container {
+  padding: 1.5rem;
+  position: relative;
+  height: 30rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+
+  &.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+  }
+}
+
+.image {
+  height: 100%;
+  border-radius: 5px;
+}
+
+.bullet {
+  position: absolute;
+  display: flex;
+  bottom: 2rem;
+
+  &Active {
+    margin: 2px;
+    width: 7px;
+    height: 7px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+
+  &Inactive {
+    margin: 2px;
+    width: 7px;
+    height: 7px;
+    background-color: #bbb;
+    border-radius: 5px;
+  }
+}
+
+.image {
+  height: 100%;
+  border-radius: 5px;
+}
+
+.invisible {
+  height: 0;
+  width: 0;
+}

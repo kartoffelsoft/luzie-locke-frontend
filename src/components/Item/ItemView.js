@@ -1,14 +1,18 @@
 import { FlatButton } from '../../components-common/button';
+import { SwipeImageViewer } from '../../components-common/image-viewer';
 import { getFromNowString } from '../../helpers/Date';
 import icons from '../../assets/images/sprite.svg';
 import styles from './ItemView.module.scss';
+import defaultImage from '../../assets/images/box.svg';
 
 const ItemView = (props) => {
+  if (props.images.length === 0) {
+    props.images[0] = defaultImage;
+  }
+
   return (
     <div className={styles.itemView}>
-      <div className={styles.image}>
-        <img src={props.image} alt={''} />
-      </div>
+      <SwipeImageViewer images={props.images} />
       <div className={styles.owner}>
         <img src={props.ownerImage} alt={''} />
         <div className={styles.ownerTextContainer}>

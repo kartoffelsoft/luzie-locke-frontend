@@ -20,11 +20,11 @@
       width: 100%;
       height: 15rem;
       &:hover {
-        position:relative;
-        top:-0.9rem;
-        left:-0.9rem;
-        width:110%;
-        height: 110%;
+        position: relative;
+        top: -0.8rem;
+        left: -0.9rem;
+        width: 110%;
+        height: 105%;
       }
     }
   }
@@ -51,7 +51,7 @@
       font-weight: 300;
       color: var(--color-primary-light-2);
     }
-  
+
     &Price {
       flex: 1;
       text-align: right;

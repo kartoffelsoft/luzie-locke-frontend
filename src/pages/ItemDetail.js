@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import * as api from '../api/index.js';
 import { BasicSpinner } from '../components-common/spinner';
 import { ItemView } from '../components/Item';
-import defaultImage from '../assets/images/box.svg';
 
 const ItemDetail = (props) => {
   const { pid } = useParams();
@@ -31,7 +30,7 @@ const ItemDetail = (props) => {
       <ItemView
         id={item._id}
         price={item.price}
-        image={defaultImage}
+        images={item.images}
         title={item.title}
         description={item.description}
         createdAt={item.createdAt}
