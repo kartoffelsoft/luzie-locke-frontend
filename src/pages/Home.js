@@ -1,12 +1,5 @@
-import SearchBar from '../components/SearchBar';
-
 function Home() {
-  return (
-    <>
-      <SearchBar />
-      {/* <ItemBoard /> */}
-    </>
-  );
+  return <></>;
 }
 
 export default Home;

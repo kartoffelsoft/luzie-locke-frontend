@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import SearchBar from '../components/SearchBar';
 import { ItemList } from '../components/Item';
 import { getItems } from '../actions/item';
 
@@ -18,7 +17,6 @@ const ItemAll = (props) => {
   return (
     <>
       <div className={styles.itemAll}>
-        <SearchBar />
         <ItemList items={items} />
       </div>
     </>

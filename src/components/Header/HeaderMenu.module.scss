@@ -1,0 +1,16 @@
+.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 120rem;
+  height: 7rem;
+  z-index: 100;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.menu {
+  position: absolute;
+  pointer-events: auto;
+  right: 1rem;
+}

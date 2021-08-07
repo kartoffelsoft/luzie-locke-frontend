@@ -1,0 +1,32 @@
+.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 120rem;
+  height: 7rem;
+  padding: 0rem 2rem;
+  padding-top: 0.5rem;
+  background-color: #fff;
+  border-bottom: var(--color-grey-light-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+.content {
+}
+
+.back {
+  height: 2rem;
+  width: 2rem;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  fill: var(--color-primary);
+  cursor: pointer;
+}
+
+.search {
+  flex-grow: 1;
+}

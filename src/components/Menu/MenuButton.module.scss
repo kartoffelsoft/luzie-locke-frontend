@@ -13,7 +13,7 @@
   &Icon {
     top: 2.5rem;
     position: relative;
-    
+
     &,
     &::before,
     &::after {
@@ -21,18 +21,22 @@
       height: 2px;
       background-color: var(--color-primary);
       display: inline-block;
-      transition: all .2s;
+      transition: all 0.2s;
     }
-  
+
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
     }
-  
-    &::before { top: -.8rem; }
-    &::after { top: .8rem; }
+
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
   }
 }
 
@@ -48,12 +52,12 @@
   background-color: transparent;
 
   &::before {
-    top:0;
+    top: 0;
     transform: rotate(45deg);
   }
 
   &::after {
-    top:0;
+    top: 0;
     transform: rotate(-45deg);
   }
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import icons from '../../assets/images/sprite.svg';
-import styles from './index.module.scss';
+import styles from './BasicSearchBar.module.scss';
 
 const SearchBar = (props) => {
   const [keyword, setKeyword] = useState('');
@@ -14,7 +14,7 @@ const SearchBar = (props) => {
     e.preventDefault();
 
     if (keyword !== '') {
-      // props.onSubmit(keyword);
+      props.onSubmit(keyword);
       setKeyword('');
     }
   };

@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
 import { LOGIN, LOGOUT } from '../../constants/actionTypes';
 import { refreshToken } from '../../actions/auth';
-import Menu from '../Menu';
-import NotificationPanel from './NotificationPanel';
+import HeaderDefaultView from './HeaderDefaultView';
+import HeaderSearchView from './HeaderSearchView';
 
 import styles from './index.module.scss';
 
 function Header() {
   const [title, setTitle] = useState('Garage Sale');
+  const [showSearch, setShowSearch] = useState(false);
+
   const user = JSON.parse(localStorage.getItem('profile'));
   const location = useLocation();
   const history = useHistory();
@@ -61,10 +63,24 @@ function Header() {
     }
   }, [location]);
 
+  const handleSearchOpen = () => {
+    setShowSearch(true);
+  };
+
+  const handleSearchClose = () => {
+    setShowSearch(false);
+  };
+
   return (
     <>
       <div className={styles.placeHolder}></div>
-      <div className={styles.menu}>
+      {!showSearch ? (
+        <HeaderDefaultView title={title} onSearchClick={handleSearchOpen} />
+      ) : (
+        <HeaderSearchView onCloseClick={handleSearchClose} />
+      )}
+
+      {/* <div className={styles.menu}>
         <div className={styles.menuButton}>
           <Menu />
         </div>
@@ -79,7 +95,7 @@ function Header() {
         <div>
           <NotificationPanel />
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

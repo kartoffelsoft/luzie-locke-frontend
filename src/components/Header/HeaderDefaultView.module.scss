@@ -1,0 +1,60 @@
+.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 120rem;
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--color-grey-light-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+
+  &Image {
+    height: 5rem;
+    width: 5rem;
+    background: url('../../assets/images/logo-medium.png') no-repeat;
+    background-size: cover;
+    margin: 0 1rem;
+  }
+
+  &Text {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 220%;
+    line-height: 1;
+
+    background-image: linear-gradient(
+      to right,
+      var(--color-primary-light-2),
+      var(--color-primary)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+
+.util {
+  display: flex;
+  align-items: center;
+  margin-right: 8.5rem;
+
+  &Icon {
+    margin-top: 0.7rem;
+    height: 2rem;
+    width: 2rem;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    fill: var(--color-primary);
+    cursor: pointer;
+  }
+}
