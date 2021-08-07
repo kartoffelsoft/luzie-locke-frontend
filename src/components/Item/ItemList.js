@@ -1,4 +1,4 @@
-import Item from './Item';
+import ItemListElement from './ItemListElement';
 
 import defaultImage from '../../assets/images/box.svg';
 import styles from './ItemList.module.scss';
@@ -18,7 +18,7 @@ const ItemList = (props) => {
   return (
     <div className={styles.container}>
       {props.items.map((item) => (
-        <Item
+        <ItemListElement
           key={item._id}
           id={item._id}
           price={item.price}

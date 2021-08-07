@@ -17,14 +17,21 @@ const HeaderDefaultView = (props) => {
           <div className={styles.logoText}>{props.title}</div>
         </div>
         <div className={styles.util}>
-          <ul style={{ listStyle: 'none' }}>
+          <ul style={{ listStyle: 'none', display: 'flex' }}>
             <li
-              style={{ height: '3rem', width: '2rem' }}
+              style={{ height: '3rem', width: '3rem' }}
               onClick={props.onSearchClick}
             >
               <svg className={styles.utilIcon}>
                 <use href={icons + '#icon-magnifying-glass'}></use>
               </svg>
+            </li>
+            <li style={{ height: '3rem', width: '2rem' }}>
+              <Link to="/chat">
+                <svg className={styles.utilIcon}>
+                  <use href={icons + '#icon-notifications_none'}></use>
+                </svg>
+              </Link>
             </li>
           </ul>
         </div>
