@@ -5,9 +5,12 @@
   border-radius: 50%;
   top: 5rem;
   right: 5rem;
-  background-image: radial-gradient(var(--color-primary-light-1), var(--color-primary));
+  background-image: radial-gradient(
+    var(--color-primary-light-1),
+    var(--color-primary)
+  );
   z-index: 50;
-  
+
   transform: scale(80);
   transition: all 200ms;
 }
@@ -17,9 +20,9 @@
   top: 50%;
   left: 50%;
   height: 70vh;
-  width: 50vh;
+  width: 47vh;
   margin-top: -35vh;
-  margin-left: -25vh;
+  margin-left: -20vh;
   z-index: 2000;
 }
 
