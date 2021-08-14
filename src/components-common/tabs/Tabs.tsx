@@ -1,25 +1,37 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import styles from './Tabs.module.scss';
 
 interface Props {
-  selectedTab: number;
-  onChange: any;
   children: [ReactElement];
 }
 
-const Tabs: React.FC<Props> = ({ selectedTab, onChange, children }) => {
-  const tabs = children.map((child: ReactElement) => {
-    const handleClick = (e: React.MouseEventHandler<HTMLDivElement>) => {
-      onChange(e, child.props.value);
-    };
+const Tabs: React.FC<Props> = ({ children }) => {
+  const [activeTab, setActiveTab] = useState<number>(0);
 
-    return React.cloneElement(child, {
-      active: child.props.value === selectedTab,
-      onClick: handleClick,
-    });
-  });
+  const handleChange = (tabIndex: number) => {
+    setActiveTab(tabIndex);
+  };
 
-  return <div className={styles.container}>{tabs}</div>;
+  return (
+    <div className={styles.container}>
+      <div className={styles.tabs}>
+        {children.map((elem, index) => {
+          return (
+            <div
+              key={index}
+              className={`${styles.tab} ${
+                index === activeTab ? styles.active : ''
+              }`}
+              onClick={() => handleChange(index)}
+            >
+              {elem.props.title}
+            </div>
+          );
+        })}
+      </div>
+      <div>{children[activeTab]}</div>
+    </div>
+  );
 };
 
 export default Tabs;
