@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import {
   Home,
   Location,
-  ItemMy,
+  MyGarage,
   ItemAll,
   ItemLocal,
   ItemCreate,
@@ -28,7 +28,11 @@ function Main() {
         <Switch>
           <PrivateRoute path="/settings" component={Location} />
           <Route path="/items/search/:keyword" component={Home} />
-          <PrivateRoute path="/items/my" locationRequired component={ItemMy} />
+          <PrivateRoute
+            path="/items/garage"
+            locationRequired
+            component={MyGarage}
+          />
           <PrivateRoute
             path="/items/local"
             locationRequired

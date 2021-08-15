@@ -1,34 +1,42 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 
+import { useBackendApi } from '../hooks/backend-api-hook';
+import { ErrorModal } from '../components-common/modal';
 import { ItemList } from '../components/Item';
 import CircleButton from '../components/CircleButton';
 import { Tabs, TabPanel } from '../components-common/tabs';
-import { getMyItems } from '../actions/item';
+import { BasicSpinner } from '../components-common/spinner';
 
-import styles from './ItemMy.module.scss';
+import styles from './MyGarage.module.scss';
 
 function ItemMy() {
-  const [activeTab, setActiveTab] = useState(1);
-  const myItems = useSelector((state) => state.item.myList);
+  const [myItems, setMyItems] = useState([]);
   const history = useHistory();
-  const dispatch = useDispatch();
+
+  const { loading, error, clearError, getGarageItems } = useBackendApi();
 
   useEffect(() => {
-    dispatch(getMyItems());
-  }, [dispatch]);
+    console.log('Create Chat');
+
+    const f = async () => {
+      const res = await getGarageItems();
+      setMyItems(res);
+    };
+    f();
+  }, [getGarageItems]);
 
   const addButtonClickHandler = () => {
     history.push('/items/create');
   };
 
-  const handleTabsChange = (e, value) => {
-    setActiveTab(value);
-  };
+  if (loading) {
+    return <BasicSpinner />;
+  }
 
   return (
     <>
+      <ErrorModal error={error} onClear={clearError} />
       <div className={styles.add}>
         <div className={styles.addButton}>
           <CircleButton onClick={addButtonClickHandler}>
@@ -38,7 +46,7 @@ function ItemMy() {
       </div>
 
       <div className={styles.container}>
-        <Tabs selectedTab={activeTab} onChange={handleTabsChange}>
+        <Tabs>
           <TabPanel title="ACTIVE">
             <ItemList items={myItems} />
           </TabPanel>

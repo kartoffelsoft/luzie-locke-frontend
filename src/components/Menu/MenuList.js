@@ -13,7 +13,7 @@ const MenuList = (props) => {
             </svg>
             <Link
               className={styles.menuLink}
-              to="/items/my"
+              to="/items/garage"
               onClick={props.onMenuClick}
             >
               My Garage

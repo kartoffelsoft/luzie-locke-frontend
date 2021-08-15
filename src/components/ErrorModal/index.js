@@ -1,5 +1,5 @@
 import Modal from '../Modal';
-import Button from '../Button';
+import { FlatButton } from '../../components-common/button';
 
 const ErrorModal = (props) => {
   return (
@@ -7,7 +7,7 @@ const ErrorModal = (props) => {
       onCancel={props.onClear}
       header="An Error Occurred!"
       show={!!props.error}
-      footer={<Button onClick={props.onClear}>Okay</Button>}
+      footer={<FlatButton onClick={props.onClear}>Okay</FlatButton>}
     >
       <p>{props.error}</p>
     </Modal>
