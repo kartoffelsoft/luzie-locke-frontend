@@ -16,7 +16,7 @@ export const getItem = (pid) => API.get(`/api/items/${pid}`);
 
 export const getItems = () => API.get('/api/items');
 
-export const getMyItems = () => API.get('/api/items/my/');
+export const getMyItems = () => API.get('/api/items/garage/');
 
 export const createItem = (data) => API.post('/api/items/', data);
 

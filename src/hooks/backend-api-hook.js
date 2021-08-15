@@ -17,7 +17,7 @@ API.interceptors.request.use((req) => {
 
 // const getItems = () => API.get('/api/items');
 
-// const getMyItems = () => API.get('/api/items/my/');
+// const getMyItems = () => API.get('/api/items/garage/');
 
 // const createItem = (data) => API.post('/api/items/', data);
 
@@ -59,7 +59,6 @@ export const useBackendApi = () => {
       setLoading(false);
       return data;
     } catch (e) {
-      console.log(e);
       setError(e.message);
       setLoading(false);
       throw e;

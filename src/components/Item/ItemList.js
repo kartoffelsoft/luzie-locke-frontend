@@ -5,14 +5,7 @@ import styles from './ItemList.module.scss';
 
 const ItemList = (props) => {
   if (props.items.length === 0) {
-    return (
-      <div className="place-list center">
-        {/* <Card>
-          <h2>No places found. Maybe create one?</h2>
-          to="/places/new">Share Place</Button>
-        </Card> */}
-      </div>
-    );
+    return <div className={styles.empty}>No item to show.</div>;
   }
 
   return (

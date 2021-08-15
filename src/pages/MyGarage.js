@@ -10,8 +10,9 @@ import { BasicSpinner } from '../components-common/spinner';
 
 import styles from './MyGarage.module.scss';
 
-function ItemMy() {
-  const [myItems, setMyItems] = useState([]);
+const MyGarage = () => {
+  const [activeItems, setActiveItems] = useState([]);
+  const [soldItems, setSoldItems] = useState([]);
   const history = useHistory();
 
   const { loading, error, clearError, getGarageItems } = useBackendApi();
@@ -20,8 +21,9 @@ function ItemMy() {
     console.log('Create Chat');
 
     const f = async () => {
-      const res = await getGarageItems();
-      setMyItems(res);
+      const items = await getGarageItems();
+      setActiveItems(items.filter((item) => item.state === 'active'));
+      setSoldItems(items.filter((item) => item.state === 'sold'));
     };
     f();
   }, [getGarageItems]);
@@ -48,13 +50,15 @@ function ItemMy() {
       <div className={styles.container}>
         <Tabs>
           <TabPanel title="ACTIVE">
-            <ItemList items={myItems} />
+            <ItemList items={activeItems} />
           </TabPanel>
-          <TabPanel title="SOLD">No sold items.</TabPanel>
+          <TabPanel title="SOLD">
+            <ItemList items={soldItems} />
+          </TabPanel>
         </Tabs>
       </div>
     </>
   );
-}
+};
 
-export default ItemMy;
+export default MyGarage;

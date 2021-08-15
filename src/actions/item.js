@@ -23,7 +23,7 @@ export const createItem = (item, history) => async (dispatch) => {
   try {
     const { data } = await api.createItem(item);
     console.log(data);
-    history.push('/items/my');
+    history.push('/items/garage');
   } catch (error) {
     console.log(error);
   }
