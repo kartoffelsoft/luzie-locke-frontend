@@ -2,10 +2,11 @@ import React, { ReactElement, useState } from 'react';
 import styles from './Tabs.module.scss';
 
 interface Props {
+  className?: string;
   children: [ReactElement];
 }
 
-const Tabs: React.FC<Props> = ({ children }) => {
+const Tabs: React.FC<Props> = ({ className, children }) => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const handleChange = (tabIndex: number) => {
@@ -13,7 +14,7 @@ const Tabs: React.FC<Props> = ({ children }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className}`}>
       <div className={styles.tabs}>
         {children.map((elem, index) => {
           return (
@@ -29,7 +30,7 @@ const Tabs: React.FC<Props> = ({ children }) => {
           );
         })}
       </div>
-      <div>{children[activeTab]}</div>
+      <div className={styles.panel}>{children[activeTab]}</div>
     </div>
   );
 };

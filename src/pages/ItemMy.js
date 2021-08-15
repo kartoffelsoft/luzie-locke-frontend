@@ -37,12 +37,14 @@ function ItemMy() {
         </div>
       </div>
 
-      <Tabs selectedTab={activeTab} onChange={handleTabsChange}>
-        <TabPanel title="ACTIVE">
-          <ItemList items={myItems} />
-        </TabPanel>
-        <TabPanel title="SOLD">No sold items.</TabPanel>
-      </Tabs>
+      <div className={styles.container}>
+        <Tabs selectedTab={activeTab} onChange={handleTabsChange}>
+          <TabPanel title="ACTIVE">
+            <ItemList items={myItems} />
+          </TabPanel>
+          <TabPanel title="SOLD">No sold items.</TabPanel>
+        </Tabs>
+      </div>
     </>
   );
 }
