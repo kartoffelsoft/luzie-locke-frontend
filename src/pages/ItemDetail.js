@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import * as api from '../api/index.js';
 import { BasicSpinner } from '../components-common/spinner';
-import { ItemView } from '../components/Item';
+import { ItemView } from '../components/item';
 
 const ItemDetail = (props) => {
   const { pid } = useParams();

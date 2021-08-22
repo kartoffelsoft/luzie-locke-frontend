@@ -1,0 +1,12 @@
+.u-center-text {
+  text-align: center;
+}
+
+.paragraph {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-2);
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

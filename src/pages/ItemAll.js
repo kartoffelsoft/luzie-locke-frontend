@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { ItemList } from '../components/Item';
+import { ItemList } from '../components/item';
 import { getItems } from '../actions/item';
 
 import styles from './ItemAll.module.scss';

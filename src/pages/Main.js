@@ -51,7 +51,7 @@ function Main() {
           <PrivateRoute path="/chat/:nid" component={Chat} />
           <PrivateRoute path="/chat" component={Inbox} />
           <Route path="/items" component={ItemAll} />
-          <Route path="/" component={ItemAll} />
+          <Route path="/" component={Home} />
         </Switch>
       </main>
       <footer>

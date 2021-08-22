@@ -65,6 +65,37 @@ export const useBackendApi = () => {
     }
   }, []);
 
+  const sendRequest = useCallback(async (query) => {
+    setLoading(true);
+
+    const source = axios.CancelToken.source();
+    activeRequests.current.push(source);
+
+    try {
+      const { data } = await API.get(query, {
+        cancelToken: source.token,
+      });
+
+      activeRequests.current = activeRequests.current.filter(
+        (request) => request !== source
+      );
+
+      setLoading(false);
+      return data;
+    } catch (e) {
+      setError(e.message);
+      setLoading(false);
+      throw e;
+    }
+  }, []);
+
+  const getHotItems = useCallback(
+    async ({ page = 1, limit = 20 }) => {
+      return await sendRequest(`/api/items/hot?page=${page}&limit=${limit}`);
+    },
+    [sendRequest]
+  );
+
   const clearError = () => {
     setError(null);
   };
@@ -76,5 +107,5 @@ export const useBackendApi = () => {
     };
   }, []);
 
-  return { loading, error, clearError, getGarageItems };
+  return { loading, error, clearError, getGarageItems, getHotItems };
 };

@@ -1,3 +1,65 @@
 .container {
-  display: grid;
+  // display: flex;
+}
+
+.brief {
+  &Section {
+    padding: 3rem 0;
+    background-color: var(--color-grey-light-1);
+  }
+
+  &TextContainer {
+    max-width: 40rem;
+  }
+
+  &Image {
+    &Container {
+      position: relative;
+    }
+
+    &Element {
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.download {
+  &Section {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    background-color: var(--color-white);
+  }
+
+  &Button {
+    &Container {
+      padding: 3rem 0;
+      display: flex;
+      justify-content: center;
+      column-gap: 1.5rem;
+    }
+
+    &Element {
+      width: 12rem;
+      height: 3.5rem;
+      object-fit: cover;
+    }
+  }
+}
+
+.hot {
+  &Section {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    background-color: var(--color-white);
+  }
+
+  &List {
+    margin-top: 1.5rem;
+  }
+
+  &More {
+    text-align: center;
+  }
 }

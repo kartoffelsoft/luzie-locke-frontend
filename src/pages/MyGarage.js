@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { useBackendApi } from '../hooks/backend-api-hook';
 import { ErrorModal } from '../components-common/modal';
-import { ItemList } from '../components/Item';
+import { ItemList } from '../components/item';
 import CircleButton from '../components/CircleButton';
 import { Tabs, TabPanel } from '../components-common/tabs';
 import { BasicSpinner } from '../components-common/spinner';
