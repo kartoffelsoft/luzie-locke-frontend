@@ -9,7 +9,7 @@ const ItemList = (props) => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${props.autoFit && styles.autoFit}`}>
       {props.items.map((item) => (
         <ItemListElement
           key={item._id}

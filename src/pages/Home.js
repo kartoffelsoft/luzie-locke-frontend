@@ -2,6 +2,8 @@ import { HotItems } from '../components/item';
 
 import AppleAppStoreImage from '../assets/images/apple-app-store.svg';
 import GoogleAppStoreImage from '../assets/images/google-app-store.svg';
+import IntroImage from '../assets/images/intro-1.png';
+
 import styles from './Home.module.scss';
 
 function Home() {
@@ -24,7 +26,7 @@ function Home() {
         <div className={styles.briefImageContainer}>
           <img
             className={`${styles.briefImageElement}`}
-            src="https://via.placeholder.com/200"
+            src={IntroImage}
             alt=""
           />
         </div>
@@ -48,13 +50,15 @@ function Home() {
         </div>
       </section>
       <section className={styles.hotSection}>
-        <div className="u-center-text">
+        <div className={styles.hotTitle}>
           <h2 className="heading-secondary">Hot items</h2>
+          <a href="#" className="btn-text">
+            More &rarr;
+          </a>
         </div>
-        <div className={styles.hotList}>
+        <div>
           <HotItems />
         </div>
-        <div className="u-center-text">SHOW MORE</div>
       </section>
       {/* <section class="section-about">
         <div class="u-center-text u-margin-bottom-big">
