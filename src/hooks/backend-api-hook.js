@@ -96,6 +96,13 @@ export const useBackendApi = () => {
     [sendRequest]
   );
 
+  const getRecentItems = useCallback(
+    async ({ page = 1, limit = 20 }) => {
+      return await sendRequest(`/api/items?page=${page}&limit=${limit}`);
+    },
+    [sendRequest]
+  );
+
   const clearError = () => {
     setError(null);
   };
@@ -107,5 +114,12 @@ export const useBackendApi = () => {
     };
   }, []);
 
-  return { loading, error, clearError, getGarageItems, getHotItems };
+  return {
+    loading,
+    error,
+    clearError,
+    getGarageItems,
+    getHotItems,
+    getRecentItems,
+  };
 };

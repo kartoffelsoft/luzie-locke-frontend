@@ -8,7 +8,7 @@ import {
   Home,
   Location,
   MyGarage,
-  ItemAll,
+  ItemShowRecent,
   ItemLocal,
   ItemCreate,
   ItemDetail,
@@ -50,7 +50,7 @@ function Main() {
           />
           <PrivateRoute path="/chat/:nid" component={Chat} />
           <PrivateRoute path="/chat" component={Inbox} />
-          <Route path="/items" component={ItemAll} />
+          <Route path="/items" component={ItemShowRecent} />
           <Route path="/" component={Home} />
         </Switch>
       </main>

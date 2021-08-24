@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { HotItems } from '../components/item';
 
 import AppleAppStoreImage from '../assets/images/apple-app-store.svg';
@@ -49,12 +51,13 @@ function Home() {
           />
         </div>
       </section>
+
       <section className={styles.hotSection}>
         <div className={styles.hotTitle}>
           <h2 className="heading-secondary">Hot items</h2>
-          <a href="#" className="btn-text">
+          <Link to="/items" className="btn-text">
             More &rarr;
-          </a>
+          </Link>
         </div>
         <div>
           <HotItems />

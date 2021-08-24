@@ -3,7 +3,7 @@ import Home from './Home';
 import Login from './Login';
 import Location from './Location';
 import MyGarage from './MyGarage';
-import ItemAll from './ItemAll';
+import ItemShowRecent from './ItemShowRecent';
 import ItemLocal from './ItemLocal';
 import ItemCreate from './ItemCreate';
 import ItemDetail from './ItemDetail';
@@ -16,7 +16,7 @@ export {
   Login,
   Location,
   MyGarage,
-  ItemAll,
+  ItemShowRecent,
   ItemLocal,
   ItemCreate,
   ItemDetail,
