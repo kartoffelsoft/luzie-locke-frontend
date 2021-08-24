@@ -9,6 +9,7 @@ import ItemCreate from './ItemCreate';
 import ItemDetail from './ItemDetail';
 import Chat from './Chat';
 import Inbox from './Inbox';
+import About from './About';
 
 export {
   Main,
@@ -22,4 +23,5 @@ export {
   ItemDetail,
   Chat,
   Inbox,
+  About,
 };

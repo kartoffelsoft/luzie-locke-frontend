@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { HotItems } from '../components/item';
+import Footer from '../components/Footer';
 
 import AppleAppStoreImage from '../assets/images/apple-app-store.svg';
 import GoogleAppStoreImage from '../assets/images/google-app-store.svg';
@@ -24,6 +25,12 @@ function Home() {
             Reusing and recycling can help you, your community, and the
             environment by saving money, energy, and natural resources.
           </p>
+
+          <div className={styles.briefLearnMore}>
+            <Link to="/about" className="btn-text">
+              Learn more &rarr;
+            </Link>
+          </div>
         </div>
         <div className={styles.briefImageContainer}>
           <img
@@ -45,7 +52,7 @@ function Home() {
             alt=""
           />
           <img
-            className={styles.downloadButton}
+            className={styles.downloadButtonElement}
             src={AppleAppStoreImage}
             alt=""
           />
@@ -95,6 +102,7 @@ function Home() {
           </div>
         </div>
       </section>   */}
+      <Footer />
     </>
   );
 }

@@ -2,7 +2,6 @@ import { Route, Switch } from 'react-router-dom';
 
 import PrivateRoute from '../helpers/PrivateRoute';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 import {
   Home,
@@ -14,6 +13,7 @@ import {
   ItemDetail,
   Chat,
   Inbox,
+  About,
 } from '.';
 
 import styles from './Main.module.scss';
@@ -51,12 +51,13 @@ function Main() {
           <PrivateRoute path="/chat/:nid" component={Chat} />
           <PrivateRoute path="/chat" component={Inbox} />
           <Route path="/items" component={ItemShowRecent} />
+          <Route path="/about" component={About} />
           <Route path="/" component={Home} />
         </Switch>
       </main>
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </>
   );
 }
