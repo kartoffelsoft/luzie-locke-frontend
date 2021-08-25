@@ -1,13 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
 
 import { FlatButton } from '../components-common/button';
 import { PhotoUpload } from '../components-common/upload';
-import { createItem } from '../actions/item';
-
-import { storage } from '../firebase';
+import { ErrorModal } from '../components-common/modal';
+import { useBackendPostItem } from '../hooks/backend-post-item-hook';
 
 import styles from './ItemCreate.module.scss';
 
@@ -19,33 +16,15 @@ function ItemCreate() {
     description: '',
     images: [],
   });
+  const { loading, error, clearError, done, post } = useBackendPostItem();
 
   const history = useHistory();
-  const dispatch = useDispatch();
 
-  const upload = (photo) => {
-    return new Promise((resolve, reject) => {
-      const name = uuidv4();
-      const task = storage.ref(`images/${name}`).putString(photo, 'data_url');
-
-      task.on(
-        'state_changed',
-        (snapshot) => {},
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          storage
-            .ref('images')
-            .child(name)
-            .getDownloadURL()
-            .then((url) => {
-              resolve(url);
-            });
-        }
-      );
-    });
-  };
+  useEffect(() => {
+    if (done) {
+      history.push('/items/garage');
+    }
+  }, [done, history]);
 
   const onPhotoAdd = (photo) => {
     setPhotos([...photos, photo]);
@@ -57,17 +36,12 @@ function ItemCreate() {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
-
-    const promises = [];
-    photos.forEach((photo) => promises.push(upload(photo)));
-
-    Promise.all(promises).then((images) => {
-      dispatch(createItem({ ...itemData, images: images }, history));
-    });
+    post({ ...itemData, images: photos });
   };
 
   return (
     <>
+      <ErrorModal error={error} onClear={clearError} />
       <div className={styles.container}>
         <form className={styles.form} onSubmit={onSubmitHandler}>
           <div className={styles.formGroup}>
@@ -128,7 +102,11 @@ function ItemCreate() {
             </label>
           </div>
 
-          <FlatButton className={styles.button} type="submit">
+          <FlatButton
+            className={styles.button}
+            type="submit"
+            disabled={loading}
+          >
             REGISTER
           </FlatButton>
         </form>
