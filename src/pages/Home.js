@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { HotItems } from '../components/item';
+import { BriefItemList } from '../components/item';
 import Footer from '../components/Footer';
+import { DownloadModal } from '../components/modal';
 
 import AppleAppStoreImage from '../assets/images/apple-app-store.svg';
 import GoogleAppStoreImage from '../assets/images/google-app-store.svg';
@@ -10,8 +12,14 @@ import IntroImage from '../assets/images/intro-1.png';
 import styles from './Home.module.scss';
 
 function Home() {
+  const [downloadModal, setDownloadModal] = useState(false);
+
   return (
     <>
+      <DownloadModal
+        show={downloadModal}
+        onClear={() => setDownloadModal(false)}
+      />
       <section className={`flex-row ${styles.briefSection}`}>
         <div className={styles.briefTextContainer}>
           <h2 className="heading-secondary">Create your shop now</h2>
@@ -50,58 +58,40 @@ function Home() {
             className={styles.downloadButtonElement}
             src={GoogleAppStoreImage}
             alt=""
+            onClick={() => setDownloadModal(true)}
           />
           <img
             className={styles.downloadButtonElement}
             src={AppleAppStoreImage}
             alt=""
+            onClick={() => setDownloadModal(true)}
           />
         </div>
       </section>
 
-      <section className={styles.hotSection}>
-        <div className={styles.hotTitle}>
+      <section className={styles.itemSection}>
+        <div className={styles.itemTitle}>
           <h2 className="heading-secondary">Hot items</h2>
           <Link to="/items" className="btn-text">
             More &rarr;
           </Link>
         </div>
         <div>
-          <HotItems />
+          <BriefItemList api="/hot" />
         </div>
       </section>
-      {/* <section class="section-about">
-        <div class="u-center-text u-margin-bottom-big">
-          <h2 class="heading-secondary">
-            Exciting tours for adventurous people
-          </h2>
+
+      <section className={styles.itemSection}>
+        <div className={styles.itemTitle}>
+          <h2 className="heading-secondary">New items</h2>
+          <Link to="/items" className="btn-text">
+            More &rarr;
+          </Link>
         </div>
-
-        <div class="flex-row">
-          <div class="flex-col-of-2">
-            <h3 class="heading-tertiary u-margin-bottom-small">You're going to fall in love with nature</h3>
-            <p class="paragraph">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur distinctio necessitatibus pariatur voluptatibus.
-            </p>
-
-            <h3 class="heading-tertiary u-margin-bottom-small">You're going to fall in love with nature</h3>
-            <p class="paragraph">
-              Voluptatum mollitia quae. Vero ipsum sapiente molestias accusamus rerum sed a eligendi aut quia.
-            </p>
-
-            <a href="#" class="btn-text">Learn more &rarr;</a>
-            
-          </div>
-
-          <div class="flex-col-of-2">
-            <div class="composition">
-              <img src="img/nat-1-large.jpg" alt="" class="composition__photo composition__photo--p1">
-              <img src="img/nat-2-large.jpg" alt="" class="composition__photo composition__photo--p2">
-              <img src="img/nat-3-large.jpg" alt="" class="composition__photo composition__photo--p3">
-            </div>>
-          </div>
+        <div>
+          <BriefItemList api="" />
         </div>
-      </section>   */}
+      </section>
       <Footer />
     </>
   );

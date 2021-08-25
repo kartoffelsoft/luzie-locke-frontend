@@ -55,9 +55,6 @@ function Main() {
           <Route path="/" component={Home} />
         </Switch>
       </main>
-      {/* <footer>
-        <Footer />
-      </footer> */}
     </>
   );
 }

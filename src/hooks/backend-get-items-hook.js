@@ -13,7 +13,7 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-export const useBackendItems = (api, page) => {
+export const useBackendGetItems = (api, page, limit) => {
   const [items, setItems] = useState([]);
   const [hasMore, setHasMore] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -28,7 +28,7 @@ export const useBackendItems = (api, page) => {
     const f = async () => {
       try {
         const { data } = await API.get(
-          `/api/items${api}?page=${page}&limit=${7}`,
+          `/api/items${api}?page=${page}&limit=${limit}`,
           {
             cancelToken: new axios.CancelToken((c) => (cancel = c)),
           }
@@ -64,12 +64,17 @@ export const useBackendItems = (api, page) => {
     f();
 
     return () => cancel();
-  }, [api, page]);
+  }, [api, page, limit]);
+
+  const clearError = () => {
+    setError(null);
+  };
 
   return {
     items,
     hasMore,
     loading,
     error,
+    clearError,
   };
 };

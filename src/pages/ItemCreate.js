@@ -68,7 +68,7 @@ function ItemCreate() {
 
   return (
     <>
-      <div className={styles.new}>
+      <div className={styles.container}>
         <form className={styles.form} onSubmit={onSubmitHandler}>
           <div className={styles.formGroup}>
             <PhotoUpload

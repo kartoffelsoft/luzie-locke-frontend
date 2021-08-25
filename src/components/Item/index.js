@@ -1,6 +1,6 @@
 import ItemList from './ItemList';
 import ItemView from './ItemView';
-import HotItems from './HotItems';
 import RecentItems from './RecentItems';
+import BriefItemList from './BriefItemList';
 
-export { ItemList, ItemView, HotItems, RecentItems };
+export { ItemList, ItemView, RecentItems, BriefItemList };

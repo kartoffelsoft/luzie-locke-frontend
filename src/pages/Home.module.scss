@@ -4,6 +4,7 @@
 
 .brief {
   &Section {
+    padding: 3rem 0;
     background-color: var(--color-grey-light-1);
   }
 
@@ -54,15 +55,16 @@
       width: 12rem;
       height: 3.5rem;
       object-fit: cover;
+      cursor: pointer;
     }
   }
 }
 
-.hot {
+.item {
   &Section {
     display: flex;
     flex-direction: column;
-    padding: 3rem 0;
+    padding: 1rem 0;
     background-color: var(--color-grey-light-1);
   }
 
