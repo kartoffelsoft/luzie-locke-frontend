@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { FlatButton } from '../components-common/button';
@@ -7,15 +6,16 @@ import { BasicSpinner } from '../components-common/spinner';
 import Map from '../components/Map';
 
 import { useHttpClient } from '../hooks/http-hook';
-import { updateLocation } from '../actions/auth';
+import { useAuth } from '../contexts/AuthProvider';
+
 import styles from './Location.module.scss';
 
 function Location() {
-  const dispatch = useDispatch();
   const history = useHistory();
   const [coordinates, setCoordinates] = useState(null);
   const [locationName, setLocationName] = useState('');
   const { sendRequest } = useHttpClient();
+  const { auth, updateLocation } = useAuth();
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -28,18 +28,16 @@ function Location() {
     } else {
       console.log('Geolocation is not supported by your browser.');
 
-      const user = JSON.parse(localStorage.getItem('profile'));
-
-      if (user?.location?.name) {
+      if (auth?.location?.name) {
         setCoordinates({
-          lat: user.location.geoJSON.coordinates[0],
-          lng: user.location.geoJSON.coordinates[1],
+          lat: auth.location.geoJSON.coordinates[0],
+          lng: auth.location.geoJSON.coordinates[1],
         });
       } else {
         setCoordinates({ lat: 52.5069312, lng: 13.1445523 });
       }
     }
-  }, []);
+  }, [auth]);
 
   const queryLocationName = useCallback(
     async (coords) => {
@@ -69,9 +67,8 @@ function Location() {
   );
 
   const applyButtonClickHandler = () => {
-    dispatch(
-      updateLocation(locationName, coordinates.lat, coordinates.lng, history)
-    );
+    updateLocation(locationName, coordinates.lat, coordinates.lng);
+    history.push('/');
   };
 
   if (coordinates === null) {

@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import decode from 'jwt-decode';
+import { useLocation } from 'react-router-dom';
 
-import { LOGIN, LOGOUT } from '../../constants/actionTypes';
-import { refreshToken } from '../../actions/auth';
+import { useAuth } from '../../contexts/AuthProvider';
 import HeaderDefaultView from './HeaderDefaultView';
 import HeaderSearchView from './HeaderSearchView';
 
@@ -14,30 +11,12 @@ function Header() {
   const [title, setTitle] = useState('Garage Sale');
   const [showSearch, setShowSearch] = useState(false);
 
-  const user = JSON.parse(localStorage.getItem('profile'));
+  const { verifyAuth } = useAuth();
   const location = useLocation();
-  const history = useHistory();
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    const access = JSON.parse(localStorage.getItem('accessToken'));
-    const refresh = JSON.parse(localStorage.getItem('refreshToken'));
-
-    if (access && refresh) {
-      const decodedAccess = decode(access);
-      dispatch({ type: LOGIN });
-
-      if (decodedAccess.exp * 1000 < new Date().getTime() + 60 * 60 * 1000) {
-        const decodedRefresh = decode(refresh);
-        if (decodedRefresh.exp * 1000 < new Date().getTime()) {
-          dispatch({ type: LOGOUT });
-          history.push('/login');
-        } else {
-          dispatch(refreshToken(refresh, history));
-        }
-      }
-    }
-  }, [location, dispatch, history, user]);
+    verifyAuth();
+  }, [location, verifyAuth]);
 
   useEffect(() => {
     switch (location.pathname.split('/')[1]) {

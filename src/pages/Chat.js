@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { MessageInput, MessageView } from '../components/chat';
 import { BasicSpinner } from '../components-common/spinner';
 import { useChat } from '../contexts/ChatProvider';
+import { useAuth } from '../contexts/AuthProvider';
 
 import styles from './Chat.module.scss';
 
@@ -12,17 +13,16 @@ const Chat = (props) => {
   const [profile, setProfile] = useState(null);
 
   const { sendMessage, startChat, messages } = useChat();
+  const { auth } = useAuth();
 
   useEffect(() => {
-    console.log('Create Chat');
-
     const f = async () => {
-      const uid = JSON.parse(localStorage.getItem('profile'))._id;
+      const uid = auth._id;
       const { chatProfile } = await startChat({ uid, nid });
       setProfile(chatProfile);
     };
     f();
-  }, [nid, startChat, setProfile]);
+  }, [nid, startChat, setProfile, auth]);
 
   const onSubmit = (message) => {
     if (profile) {

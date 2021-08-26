@@ -55,19 +55,11 @@ export const useBackendPostItem = () => {
       inputs.images.forEach((photo) => promises.push(upload(photo)));
 
       Promise.all(promises).then(async (images) => {
-        let cancel;
-
         try {
-          const { data } = await API.post(
-            '/api/items/',
-            {
-              ...inputs,
-              images: images,
-            },
-            {
-              cancelToken: new axios.CancelToken((c) => (cancel = c)),
-            }
-          );
+          const { data } = await API.post('/api/items/', {
+            ...inputs,
+            images: images,
+          });
 
           setDone(true);
           setLoading(false);

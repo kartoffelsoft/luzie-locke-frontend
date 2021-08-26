@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 
-import { LOGOUT } from '../../constants/actionTypes';
+import { useAuth } from '../../contexts/AuthProvider';
 import { ProfilePicture } from '../../components-common';
 import { FlatButton } from '../../components-common/button';
 import MenuButton from './MenuButton';
@@ -12,17 +11,11 @@ import styles from './index.module.scss';
 import icons from '../../assets/images/sprite.svg';
 
 const Menu = () => {
-  const dispatch = useDispatch();
   const history = useHistory();
-
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const { auth, logout } = useAuth();
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   const onDrawerClick = () => {
-    if (!drawerIsOpen) {
-      setUser(JSON.parse(localStorage.getItem('profile')));
-    }
-
     setDrawerIsOpen(!drawerIsOpen);
   };
 
@@ -32,9 +25,8 @@ const Menu = () => {
   };
 
   const onLogoutHandler = () => {
-    dispatch({ type: LOGOUT });
+    logout();
     history.push('/');
-    setUser(null);
   };
 
   const onMenuClick = () => {
@@ -42,7 +34,7 @@ const Menu = () => {
   };
 
   const renderSideDrawer = () => {
-    switch (user) {
+    switch (auth) {
       case null:
         return;
 
@@ -51,21 +43,21 @@ const Menu = () => {
           <>
             <div className={styles.user} onClick={onUserClick}>
               <ProfilePicture
-                src={user.pictureURI}
+                src={auth.pictureURI}
                 className={styles.userPhoto}
               />
-              <div className={styles.userName}>Hello, {user.name}!</div>
-              {user.location.name !== '' && (
+              <div className={styles.userName}>Hello, {auth.name}!</div>
+              {auth.location.name !== '' && (
                 <div className={styles.userLocation}>
                   <svg className={styles.userLocationIcon}>
                     <use href={icons + '#icon-location-pin'}></use>
                   </svg>
                   <div className={styles.userLocationText}>
-                    {user.location.name}
+                    {auth.location.name}
                   </div>
                 </div>
               )}
-              {user.location.name === '' && (
+              {auth.location.name === '' && (
                 <div className={styles.userSetLocation}>
                   <FlatButton>Set Location</FlatButton>
                 </div>
@@ -82,7 +74,7 @@ const Menu = () => {
   };
 
   const renderButton = () => {
-    switch (user) {
+    switch (auth) {
       case null:
         return (
           <Link to="/login" className={styles.loginButton}>

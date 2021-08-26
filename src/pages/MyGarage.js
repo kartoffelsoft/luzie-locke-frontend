@@ -18,8 +18,6 @@ const MyGarage = () => {
   const { loading, error, clearError, getGarageItems } = useBackendApi();
 
   useEffect(() => {
-    console.log('Create Chat');
-
     const f = async () => {
       const items = await getGarageItems();
       setActiveItems(items.filter((item) => item.state === 'active'));

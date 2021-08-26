@@ -1,18 +1,15 @@
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 
-import { loginGoogle } from '../actions/auth';
+import { useAuth } from '../contexts/AuthProvider';
 import styles from './Login.module.scss';
 
 function Login() {
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const { login } = useAuth();
 
   const onGoogleSuccess = async (res) => {
     const token = res?.accessToken;
     try {
-      dispatch(loginGoogle(token, history));
+      login(token);
     } catch (error) {
       console.log(error);
     }

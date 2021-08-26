@@ -1,2 +1,23 @@
 .container {
 }
+
+.techStack {
+  &Section {
+    padding: 3rem 0;
+    background-color: var(--color-grey-light-1);
+  }
+
+  &Cloud {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &Descriptions {
+    padding-left: 5vw;
+    max-width: 42rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
